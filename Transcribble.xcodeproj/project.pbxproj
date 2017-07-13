@@ -1,0 +1,862 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		63B7613E0503DE2B0BF663D4 /* Pods_Transcribble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 717AD6F30FD891E06B0D8AE6 /* Pods_Transcribble.framework */; };
+		A66880CD1F13E0E0009BE5A9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A66880CC1F13E0E0009BE5A9 /* AppDelegate.swift */; };
+		A66880D21F13E0E0009BE5A9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A66880D01F13E0E0009BE5A9 /* Main.storyboard */; };
+		A66880D41F13E0E0009BE5A9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A66880D31F13E0E0009BE5A9 /* Assets.xcassets */; };
+		A66880D71F13E0E0009BE5A9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A66880D51F13E0E0009BE5A9 /* LaunchScreen.storyboard */; };
+		A66880E21F13E0E0009BE5A9 /* TranscribbleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A66880E11F13E0E0009BE5A9 /* TranscribbleTests.swift */; };
+		A66880ED1F13E0E1009BE5A9 /* TranscribbleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A66880EC1F13E0E1009BE5A9 /* TranscribbleUITests.swift */; };
+		A66880FD1F13E1FC009BE5A9 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A66880FC1F13E1FC009BE5A9 /* LoginViewController.swift */; };
+		A66880FF1F13EBB5009BE5A9 /* SavedListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A66880FE1F13EBB5009BE5A9 /* SavedListTableViewController.swift */; };
+		A66881021F13EC20009BE5A9 /* SavedListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A66881011F13EC20009BE5A9 /* SavedListTableViewCell.swift */; };
+		A66881061F13F4BE009BE5A9 /* DisplayTranscriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A66881051F13F4BE009BE5A9 /* DisplayTranscriptionViewController.swift */; };
+		A66881081F13F4D6009BE5A9 /* UploadInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A66881071F13F4D6009BE5A9 /* UploadInfoViewController.swift */; };
+		A668810A1F13F5C5009BE5A9 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A66881091F13F5C5009BE5A9 /* Login.storyboard */; };
+		A668810E1F13FFE8009BE5A9 /* UploadInfo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A668810D1F13FFE8009BE5A9 /* UploadInfo.storyboard */; };
+		A66881101F141DEC009BE5A9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A668810F1F141DEC009BE5A9 /* GoogleService-Info.plist */; };
+		A66881121F144083009BE5A9 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A66881111F144083009BE5A9 /* User.swift */; };
+		A66881151F14417C009BE5A9 /* CreateUsernameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A66881141F14417C009BE5A9 /* CreateUsernameViewController.swift */; };
+		A66881171F157232009BE5A9 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A66881161F157232009BE5A9 /* UserService.swift */; };
+		A66881201F1574A1009BE5A9 /* ActionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A668811F1F1574A1009BE5A9 /* ActionViewController.swift */; };
+		A66881231F1574A1009BE5A9 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A66881211F1574A1009BE5A9 /* MainInterface.storyboard */; };
+		A66881271F1574A1009BE5A9 /* TranscribbleActionExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = A668811D1F1574A1009BE5A9 /* TranscribbleActionExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		A668812D1F1586A9009BE5A9 /* transcribbleactionicon.png in Resources */ = {isa = PBXBuildFile; fileRef = A668812C1F1586A9009BE5A9 /* transcribbleactionicon.png */; };
+		A66881311F159BB5009BE5A9 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A66881301F159BB5009BE5A9 /* Profile.storyboard */; };
+		A66881331F159BCD009BE5A9 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A66881321F159BCD009BE5A9 /* ProfileViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A66880DE1F13E0E0009BE5A9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A66880C11F13E0E0009BE5A9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A66880C81F13E0E0009BE5A9;
+			remoteInfo = Transcribble;
+		};
+		A66880E91F13E0E1009BE5A9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A66880C11F13E0E0009BE5A9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A66880C81F13E0E0009BE5A9;
+			remoteInfo = Transcribble;
+		};
+		A66881251F1574A1009BE5A9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A66880C11F13E0E0009BE5A9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A668811C1F1574A1009BE5A9;
+			remoteInfo = TranscribbleActionExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		A668812B1F1574A1009BE5A9 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				A66881271F1574A1009BE5A9 /* TranscribbleActionExtension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		166E1E3BCE500F68E6D07D55 /* Pods-Transcribble.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Transcribble.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Transcribble/Pods-Transcribble.debug.xcconfig"; sourceTree = "<group>"; };
+		717AD6F30FD891E06B0D8AE6 /* Pods_Transcribble.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Transcribble.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		792B9AAD0C4ED548D12763CA /* Pods-Transcribble.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Transcribble.release.xcconfig"; path = "Pods/Target Support Files/Pods-Transcribble/Pods-Transcribble.release.xcconfig"; sourceTree = "<group>"; };
+		A66880C91F13E0E0009BE5A9 /* Transcribble.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Transcribble.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A66880CC1F13E0E0009BE5A9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		A66880D11F13E0E0009BE5A9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		A66880D31F13E0E0009BE5A9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A66880D61F13E0E0009BE5A9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		A66880D81F13E0E0009BE5A9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A66880DD1F13E0E0009BE5A9 /* TranscribbleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TranscribbleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A66880E11F13E0E0009BE5A9 /* TranscribbleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranscribbleTests.swift; sourceTree = "<group>"; };
+		A66880E31F13E0E0009BE5A9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A66880E81F13E0E1009BE5A9 /* TranscribbleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TranscribbleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A66880EC1F13E0E1009BE5A9 /* TranscribbleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranscribbleUITests.swift; sourceTree = "<group>"; };
+		A66880EE1F13E0E1009BE5A9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A66880FC1F13E1FC009BE5A9 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		A66880FE1F13EBB5009BE5A9 /* SavedListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SavedListTableViewController.swift; sourceTree = "<group>"; };
+		A66881011F13EC20009BE5A9 /* SavedListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SavedListTableViewCell.swift; sourceTree = "<group>"; };
+		A66881051F13F4BE009BE5A9 /* DisplayTranscriptionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisplayTranscriptionViewController.swift; sourceTree = "<group>"; };
+		A66881071F13F4D6009BE5A9 /* UploadInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UploadInfoViewController.swift; sourceTree = "<group>"; };
+		A66881091F13F5C5009BE5A9 /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		A668810D1F13FFE8009BE5A9 /* UploadInfo.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = UploadInfo.storyboard; sourceTree = "<group>"; };
+		A668810F1F141DEC009BE5A9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		A66881111F144083009BE5A9 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		A66881141F14417C009BE5A9 /* CreateUsernameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateUsernameViewController.swift; sourceTree = "<group>"; };
+		A66881161F157232009BE5A9 /* UserService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
+		A668811D1F1574A1009BE5A9 /* TranscribbleActionExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = TranscribbleActionExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		A668811F1F1574A1009BE5A9 /* ActionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionViewController.swift; sourceTree = "<group>"; };
+		A66881221F1574A1009BE5A9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		A66881241F1574A1009BE5A9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A668812C1F1586A9009BE5A9 /* transcribbleactionicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = transcribbleactionicon.png; path = ../../../../Desktop/transcribbleactionicon.png; sourceTree = "<group>"; };
+		A668812E1F158766009BE5A9 /* Transcribble.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Transcribble.entitlements; sourceTree = "<group>"; };
+		A668812F1F1587E2009BE5A9 /* TranscribbleActionExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TranscribbleActionExtension.entitlements; sourceTree = "<group>"; };
+		A66881301F159BB5009BE5A9 /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
+		A66881321F159BCD009BE5A9 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A66880C61F13E0E0009BE5A9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				63B7613E0503DE2B0BF663D4 /* Pods_Transcribble.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A66880DA1F13E0E0009BE5A9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A66880E51F13E0E1009BE5A9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A668811A1F1574A1009BE5A9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		231419E5DD2C01261ABC4CB8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				717AD6F30FD891E06B0D8AE6 /* Pods_Transcribble.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A66880C01F13E0E0009BE5A9 = {
+			isa = PBXGroup;
+			children = (
+				A66880CB1F13E0E0009BE5A9 /* Transcribble */,
+				A66880E01F13E0E0009BE5A9 /* TranscribbleTests */,
+				A66880EB1F13E0E1009BE5A9 /* TranscribbleUITests */,
+				A668811E1F1574A1009BE5A9 /* TranscribbleActionExtension */,
+				A66880CA1F13E0E0009BE5A9 /* Products */,
+				DE129E98821E2EB35FB7CFF2 /* Pods */,
+				231419E5DD2C01261ABC4CB8 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		A66880CA1F13E0E0009BE5A9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A66880C91F13E0E0009BE5A9 /* Transcribble.app */,
+				A66880DD1F13E0E0009BE5A9 /* TranscribbleTests.xctest */,
+				A66880E81F13E0E1009BE5A9 /* TranscribbleUITests.xctest */,
+				A668811D1F1574A1009BE5A9 /* TranscribbleActionExtension.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A66880CB1F13E0E0009BE5A9 /* Transcribble */ = {
+			isa = PBXGroup;
+			children = (
+				A668812E1F158766009BE5A9 /* Transcribble.entitlements */,
+				A66880CC1F13E0E0009BE5A9 /* AppDelegate.swift */,
+				A66880FB1F13E18D009BE5A9 /* Storyboards */,
+				A66880FA1F13E183009BE5A9 /* View Controllers */,
+				A66881001F13EBD0009BE5A9 /* View */,
+				A66880D81F13E0E0009BE5A9 /* Info.plist */,
+				A668810F1F141DEC009BE5A9 /* GoogleService-Info.plist */,
+				A66880D31F13E0E0009BE5A9 /* Assets.xcassets */,
+				A66881131F1440A8009BE5A9 /* Models */,
+				A66881181F157238009BE5A9 /* Service */,
+			);
+			path = Transcribble;
+			sourceTree = "<group>";
+		};
+		A66880E01F13E0E0009BE5A9 /* TranscribbleTests */ = {
+			isa = PBXGroup;
+			children = (
+				A66880E11F13E0E0009BE5A9 /* TranscribbleTests.swift */,
+				A66880E31F13E0E0009BE5A9 /* Info.plist */,
+			);
+			path = TranscribbleTests;
+			sourceTree = "<group>";
+		};
+		A66880EB1F13E0E1009BE5A9 /* TranscribbleUITests */ = {
+			isa = PBXGroup;
+			children = (
+				A66880EC1F13E0E1009BE5A9 /* TranscribbleUITests.swift */,
+				A66880EE1F13E0E1009BE5A9 /* Info.plist */,
+			);
+			path = TranscribbleUITests;
+			sourceTree = "<group>";
+		};
+		A66880FA1F13E183009BE5A9 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				A66880FC1F13E1FC009BE5A9 /* LoginViewController.swift */,
+				A66880FE1F13EBB5009BE5A9 /* SavedListTableViewController.swift */,
+				A66881051F13F4BE009BE5A9 /* DisplayTranscriptionViewController.swift */,
+				A66881071F13F4D6009BE5A9 /* UploadInfoViewController.swift */,
+				A66881141F14417C009BE5A9 /* CreateUsernameViewController.swift */,
+				A66881321F159BCD009BE5A9 /* ProfileViewController.swift */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		A66880FB1F13E18D009BE5A9 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				A66880D01F13E0E0009BE5A9 /* Main.storyboard */,
+				A66881091F13F5C5009BE5A9 /* Login.storyboard */,
+				A66880D51F13E0E0009BE5A9 /* LaunchScreen.storyboard */,
+				A668810D1F13FFE8009BE5A9 /* UploadInfo.storyboard */,
+				A66881301F159BB5009BE5A9 /* Profile.storyboard */,
+			);
+			name = Storyboards;
+			sourceTree = "<group>";
+		};
+		A66881001F13EBD0009BE5A9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A66881011F13EC20009BE5A9 /* SavedListTableViewCell.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		A66881131F1440A8009BE5A9 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A66881111F144083009BE5A9 /* User.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		A66881181F157238009BE5A9 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				A66881161F157232009BE5A9 /* UserService.swift */,
+			);
+			name = Service;
+			sourceTree = "<group>";
+		};
+		A668811E1F1574A1009BE5A9 /* TranscribbleActionExtension */ = {
+			isa = PBXGroup;
+			children = (
+				A668812F1F1587E2009BE5A9 /* TranscribbleActionExtension.entitlements */,
+				A668811F1F1574A1009BE5A9 /* ActionViewController.swift */,
+				A66881211F1574A1009BE5A9 /* MainInterface.storyboard */,
+				A66881241F1574A1009BE5A9 /* Info.plist */,
+				A668812C1F1586A9009BE5A9 /* transcribbleactionicon.png */,
+			);
+			path = TranscribbleActionExtension;
+			sourceTree = "<group>";
+		};
+		DE129E98821E2EB35FB7CFF2 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				166E1E3BCE500F68E6D07D55 /* Pods-Transcribble.debug.xcconfig */,
+				792B9AAD0C4ED548D12763CA /* Pods-Transcribble.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A66880C81F13E0E0009BE5A9 /* Transcribble */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A66880F11F13E0E1009BE5A9 /* Build configuration list for PBXNativeTarget "Transcribble" */;
+			buildPhases = (
+				B69D221C5F97F7DC5F07E50A /* [CP] Check Pods Manifest.lock */,
+				A66880C51F13E0E0009BE5A9 /* Sources */,
+				A66880C61F13E0E0009BE5A9 /* Frameworks */,
+				A66880C71F13E0E0009BE5A9 /* Resources */,
+				E081925B4BCA75C78C7F75EB /* [CP] Embed Pods Frameworks */,
+				8363431BA9753620C72E296D /* [CP] Copy Pods Resources */,
+				A668812B1F1574A1009BE5A9 /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A66881261F1574A1009BE5A9 /* PBXTargetDependency */,
+			);
+			name = Transcribble;
+			productName = Transcribble;
+			productReference = A66880C91F13E0E0009BE5A9 /* Transcribble.app */;
+			productType = "com.apple.product-type.application";
+		};
+		A66880DC1F13E0E0009BE5A9 /* TranscribbleTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A66880F41F13E0E1009BE5A9 /* Build configuration list for PBXNativeTarget "TranscribbleTests" */;
+			buildPhases = (
+				A66880D91F13E0E0009BE5A9 /* Sources */,
+				A66880DA1F13E0E0009BE5A9 /* Frameworks */,
+				A66880DB1F13E0E0009BE5A9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A66880DF1F13E0E0009BE5A9 /* PBXTargetDependency */,
+			);
+			name = TranscribbleTests;
+			productName = TranscribbleTests;
+			productReference = A66880DD1F13E0E0009BE5A9 /* TranscribbleTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		A66880E71F13E0E1009BE5A9 /* TranscribbleUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A66880F71F13E0E1009BE5A9 /* Build configuration list for PBXNativeTarget "TranscribbleUITests" */;
+			buildPhases = (
+				A66880E41F13E0E1009BE5A9 /* Sources */,
+				A66880E51F13E0E1009BE5A9 /* Frameworks */,
+				A66880E61F13E0E1009BE5A9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A66880EA1F13E0E1009BE5A9 /* PBXTargetDependency */,
+			);
+			name = TranscribbleUITests;
+			productName = TranscribbleUITests;
+			productReference = A66880E81F13E0E1009BE5A9 /* TranscribbleUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		A668811C1F1574A1009BE5A9 /* TranscribbleActionExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A66881281F1574A1009BE5A9 /* Build configuration list for PBXNativeTarget "TranscribbleActionExtension" */;
+			buildPhases = (
+				A66881191F1574A1009BE5A9 /* Sources */,
+				A668811A1F1574A1009BE5A9 /* Frameworks */,
+				A668811B1F1574A1009BE5A9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TranscribbleActionExtension;
+			productName = TranscribbleActionExtension;
+			productReference = A668811D1F1574A1009BE5A9 /* TranscribbleActionExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A66880C11F13E0E0009BE5A9 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0820;
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = "Ananya Bhat";
+				TargetAttributes = {
+					A66880C81F13E0E0009BE5A9 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = 44L7Q6TC3X;
+						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
+					};
+					A66880DC1F13E0E0009BE5A9 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = 44L7Q6TC3X;
+						ProvisioningStyle = Automatic;
+						TestTargetID = A66880C81F13E0E0009BE5A9;
+					};
+					A66880E71F13E0E1009BE5A9 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = 44L7Q6TC3X;
+						ProvisioningStyle = Automatic;
+						TestTargetID = A66880C81F13E0E0009BE5A9;
+					};
+					A668811C1F1574A1009BE5A9 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = 44L7Q6TC3X;
+						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
+					};
+				};
+			};
+			buildConfigurationList = A66880C41F13E0E0009BE5A9 /* Build configuration list for PBXProject "Transcribble" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A66880C01F13E0E0009BE5A9;
+			productRefGroup = A66880CA1F13E0E0009BE5A9 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A66880C81F13E0E0009BE5A9 /* Transcribble */,
+				A66880DC1F13E0E0009BE5A9 /* TranscribbleTests */,
+				A66880E71F13E0E1009BE5A9 /* TranscribbleUITests */,
+				A668811C1F1574A1009BE5A9 /* TranscribbleActionExtension */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A66880C71F13E0E0009BE5A9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A668810A1F13F5C5009BE5A9 /* Login.storyboard in Resources */,
+				A66880D71F13E0E0009BE5A9 /* LaunchScreen.storyboard in Resources */,
+				A66880D41F13E0E0009BE5A9 /* Assets.xcassets in Resources */,
+				A66880D21F13E0E0009BE5A9 /* Main.storyboard in Resources */,
+				A668810E1F13FFE8009BE5A9 /* UploadInfo.storyboard in Resources */,
+				A66881311F159BB5009BE5A9 /* Profile.storyboard in Resources */,
+				A66881101F141DEC009BE5A9 /* GoogleService-Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A66880DB1F13E0E0009BE5A9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A66880E61F13E0E1009BE5A9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A668811B1F1574A1009BE5A9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A66881231F1574A1009BE5A9 /* MainInterface.storyboard in Resources */,
+				A668812D1F1586A9009BE5A9 /* transcribbleactionicon.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		8363431BA9753620C72E296D /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Transcribble/Pods-Transcribble-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B69D221C5F97F7DC5F07E50A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		E081925B4BCA75C78C7F75EB /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Transcribble/Pods-Transcribble-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A66880C51F13E0E0009BE5A9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A66880FD1F13E1FC009BE5A9 /* LoginViewController.swift in Sources */,
+				A66881331F159BCD009BE5A9 /* ProfileViewController.swift in Sources */,
+				A66881061F13F4BE009BE5A9 /* DisplayTranscriptionViewController.swift in Sources */,
+				A66881171F157232009BE5A9 /* UserService.swift in Sources */,
+				A66880FF1F13EBB5009BE5A9 /* SavedListTableViewController.swift in Sources */,
+				A66881121F144083009BE5A9 /* User.swift in Sources */,
+				A66881081F13F4D6009BE5A9 /* UploadInfoViewController.swift in Sources */,
+				A66880CD1F13E0E0009BE5A9 /* AppDelegate.swift in Sources */,
+				A66881021F13EC20009BE5A9 /* SavedListTableViewCell.swift in Sources */,
+				A66881151F14417C009BE5A9 /* CreateUsernameViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A66880D91F13E0E0009BE5A9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A66880E21F13E0E0009BE5A9 /* TranscribbleTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A66880E41F13E0E1009BE5A9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A66880ED1F13E0E1009BE5A9 /* TranscribbleUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A66881191F1574A1009BE5A9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A66881201F1574A1009BE5A9 /* ActionViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A66880DF1F13E0E0009BE5A9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A66880C81F13E0E0009BE5A9 /* Transcribble */;
+			targetProxy = A66880DE1F13E0E0009BE5A9 /* PBXContainerItemProxy */;
+		};
+		A66880EA1F13E0E1009BE5A9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A66880C81F13E0E0009BE5A9 /* Transcribble */;
+			targetProxy = A66880E91F13E0E1009BE5A9 /* PBXContainerItemProxy */;
+		};
+		A66881261F1574A1009BE5A9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A668811C1F1574A1009BE5A9 /* TranscribbleActionExtension */;
+			targetProxy = A66881251F1574A1009BE5A9 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		A66880D01F13E0E0009BE5A9 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A66880D11F13E0E0009BE5A9 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		A66880D51F13E0E0009BE5A9 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A66880D61F13E0E0009BE5A9 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		A66881211F1574A1009BE5A9 /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A66881221F1574A1009BE5A9 /* Base */,
+			);
+			name = MainInterface.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		A66880EF1F13E0E1009BE5A9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		A66880F01F13E0E1009BE5A9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A66880F21F13E0E1009BE5A9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 166E1E3BCE500F68E6D07D55 /* Pods-Transcribble.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Transcribble/Transcribble.entitlements;
+				DEVELOPMENT_TEAM = 44L7Q6TC3X;
+				INFOPLIST_FILE = Transcribble/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ananyabhat.Transcribble;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		A66880F31F13E0E1009BE5A9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 792B9AAD0C4ED548D12763CA /* Pods-Transcribble.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Transcribble/Transcribble.entitlements;
+				DEVELOPMENT_TEAM = 44L7Q6TC3X;
+				INFOPLIST_FILE = Transcribble/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ananyabhat.Transcribble;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		A66880F51F13E0E1009BE5A9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 44L7Q6TC3X;
+				INFOPLIST_FILE = TranscribbleTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ananyabhat.TranscribbleTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Transcribble.app/Transcribble";
+			};
+			name = Debug;
+		};
+		A66880F61F13E0E1009BE5A9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 44L7Q6TC3X;
+				INFOPLIST_FILE = TranscribbleTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ananyabhat.TranscribbleTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Transcribble.app/Transcribble";
+			};
+			name = Release;
+		};
+		A66880F81F13E0E1009BE5A9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = 44L7Q6TC3X;
+				INFOPLIST_FILE = TranscribbleUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ananyabhat.TranscribbleUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = Transcribble;
+			};
+			name = Debug;
+		};
+		A66880F91F13E0E1009BE5A9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = 44L7Q6TC3X;
+				INFOPLIST_FILE = TranscribbleUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ananyabhat.TranscribbleUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = Transcribble;
+			};
+			name = Release;
+		};
+		A66881291F1574A1009BE5A9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = TranscribbleActionExtension/TranscribbleActionExtension.entitlements;
+				DEVELOPMENT_TEAM = 44L7Q6TC3X;
+				INFOPLIST_FILE = TranscribbleActionExtension/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ananyabhat.Transcribble.TranscribbleActionExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		A668812A1F1574A1009BE5A9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = TranscribbleActionExtension/TranscribbleActionExtension.entitlements;
+				DEVELOPMENT_TEAM = 44L7Q6TC3X;
+				INFOPLIST_FILE = TranscribbleActionExtension/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ananyabhat.Transcribble.TranscribbleActionExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A66880C41F13E0E0009BE5A9 /* Build configuration list for PBXProject "Transcribble" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A66880EF1F13E0E1009BE5A9 /* Debug */,
+				A66880F01F13E0E1009BE5A9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A66880F11F13E0E1009BE5A9 /* Build configuration list for PBXNativeTarget "Transcribble" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A66880F21F13E0E1009BE5A9 /* Debug */,
+				A66880F31F13E0E1009BE5A9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A66880F41F13E0E1009BE5A9 /* Build configuration list for PBXNativeTarget "TranscribbleTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A66880F51F13E0E1009BE5A9 /* Debug */,
+				A66880F61F13E0E1009BE5A9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A66880F71F13E0E1009BE5A9 /* Build configuration list for PBXNativeTarget "TranscribbleUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A66880F81F13E0E1009BE5A9 /* Debug */,
+				A66880F91F13E0E1009BE5A9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A66881281F1574A1009BE5A9 /* Build configuration list for PBXNativeTarget "TranscribbleActionExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A66881291F1574A1009BE5A9 /* Debug */,
+				A668812A1F1574A1009BE5A9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A66880C11F13E0E0009BE5A9 /* Project object */;
+}
