@@ -10,6 +10,9 @@ import UIKit
 import MobileCoreServices
 import AVFoundation
 import AVKit
+import FirebaseStorage
+import FirebaseDatabase
+import Firebase
 
 class ActionViewController: UIViewController {
 
@@ -17,7 +20,7 @@ class ActionViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        FirebaseApp.configure()
         // Get the item[s] we're handling from the extension context.
         
         // For example, look for an image and place it into an image view.
@@ -36,18 +39,37 @@ class ActionViewController: UIViewController {
                     // the audio format(s) we expect to receive and that we can handle
                 {
                     itemProvider.loadItem(forTypeIdentifier: kUTTypeMPEG4Audio as String,
-                                                           options: nil, completionHandler: { (audioURL, error) in
-                                                            OperationQueue.main.addOperation {
-                                                                
-                                                                if let audioURL = audioURL as? NSURL {
-                                                                    
-                                                                    let sharedContainerDefaults = UserDefaults.init(suiteName:
-                                                                        "group.com.ananyabhat.transcribble.sharedcontainer")  // must match the name chosen above
-                                                                    sharedContainerDefaults?.set(audioURL as URL, forKey: "SharedAudioURLKey")
-                                                                    sharedContainerDefaults?.synchronize()
-                                                                     
-                                                                }
-                                                            }
+                                          options: nil, completionHandler: { (audioURL, error) in
+                                            OperationQueue.main.addOperation {
+                                                
+                                                if let audioURL = audioURL as? URL {
+                                                let fileName = NSUUID().uuidString + ".m4a"
+                                            Storage.storage().reference().child("message_voice").child(fileName).putFile(from: audioURL, metadata: nil) { (metadata, error) in
+                                                        if error != nil {
+                                                            print(error ?? "error")
+                                                        }
+                                                        
+                                                        if let downloadUrl = metadata?.downloadURL()?.absoluteString {
+                                                            print(downloadUrl)
+                                                            let values: [String : Any] = ["audioUrl": downloadUrl]
+                                                        }
+                                                    }
+                                                
+                                            
+//
+//                                                    let sharedContainerDefaults = UserDefaults.init(suiteName:
+//                                                        "group.com.ananyabhat.transcribble.sharedcontainer")  // must match the name chosen above
+//                                                    sharedContainerDefaults?.set(audioURL as URL, forKey: "SharedAudioURLKey")
+//                                                    sharedContainerDefaults?.synchronize()
+
+//                                                    let theAVPlayer :AVPlayer = AVPlayer(url: audioURL)
+//                                                    let theAVPlayerViewController :AVPlayerViewController = AVPlayerViewController()
+//                                                    theAVPlayerViewController.player = theAVPlayer
+//                                                    self.present(theAVPlayerViewController, animated: true) {
+//                                                        theAVPlayerViewController.player!.play()
+//                                                    }
+                                                }
+                                            }
                     })
                     
                     audioFound = true

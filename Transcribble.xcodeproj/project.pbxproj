@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		63B7613E0503DE2B0BF663D4 /* Pods_Transcribble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 717AD6F30FD891E06B0D8AE6 /* Pods_Transcribble.framework */; };
+		A65698B91F18276800451FFC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A65698B81F18276800451FFC /* GoogleService-Info.plist */; };
 		A66880CD1F13E0E0009BE5A9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A66880CC1F13E0E0009BE5A9 /* AppDelegate.swift */; };
 		A66880D21F13E0E0009BE5A9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A66880D01F13E0E0009BE5A9 /* Main.storyboard */; };
 		A66880D41F13E0E0009BE5A9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A66880D31F13E0E0009BE5A9 /* Assets.xcassets */; };
@@ -31,6 +32,7 @@
 		A668812D1F1586A9009BE5A9 /* transcribbleactionicon.png in Resources */ = {isa = PBXBuildFile; fileRef = A668812C1F1586A9009BE5A9 /* transcribbleactionicon.png */; };
 		A66881311F159BB5009BE5A9 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A66881301F159BB5009BE5A9 /* Profile.storyboard */; };
 		A66881331F159BCD009BE5A9 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A66881321F159BCD009BE5A9 /* ProfileViewController.swift */; };
+		E2ABA79C21D20AD85073C2A0 /* Pods_TranscribbleActionExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C283B1E895EE1AA9D7E87D69 /* Pods_TranscribbleActionExtension.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,9 +74,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0F5CE625B3CE1D25BBA8C5D8 /* Pods-TranscribbleActionExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TranscribbleActionExtension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TranscribbleActionExtension/Pods-TranscribbleActionExtension.debug.xcconfig"; sourceTree = "<group>"; };
 		166E1E3BCE500F68E6D07D55 /* Pods-Transcribble.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Transcribble.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Transcribble/Pods-Transcribble.debug.xcconfig"; sourceTree = "<group>"; };
+		710041BAB6378E5DED376039 /* Pods-TranscribbleActionExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TranscribbleActionExtension.release.xcconfig"; path = "Pods/Target Support Files/Pods-TranscribbleActionExtension/Pods-TranscribbleActionExtension.release.xcconfig"; sourceTree = "<group>"; };
 		717AD6F30FD891E06B0D8AE6 /* Pods_Transcribble.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Transcribble.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		792B9AAD0C4ED548D12763CA /* Pods-Transcribble.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Transcribble.release.xcconfig"; path = "Pods/Target Support Files/Pods-Transcribble/Pods-Transcribble.release.xcconfig"; sourceTree = "<group>"; };
+		A65698B81F18276800451FFC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A66880C91F13E0E0009BE5A9 /* Transcribble.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Transcribble.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A66880CC1F13E0E0009BE5A9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A66880D11F13E0E0009BE5A9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -107,6 +112,7 @@
 		A668812F1F1587E2009BE5A9 /* TranscribbleActionExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TranscribbleActionExtension.entitlements; sourceTree = "<group>"; };
 		A66881301F159BB5009BE5A9 /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		A66881321F159BCD009BE5A9 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		C283B1E895EE1AA9D7E87D69 /* Pods_TranscribbleActionExtension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TranscribbleActionExtension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,6 +142,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E2ABA79C21D20AD85073C2A0 /* Pods_TranscribbleActionExtension.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -146,6 +153,7 @@
 			isa = PBXGroup;
 			children = (
 				717AD6F30FD891E06B0D8AE6 /* Pods_Transcribble.framework */,
+				C283B1E895EE1AA9D7E87D69 /* Pods_TranscribbleActionExtension.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -265,6 +273,7 @@
 				A668811F1F1574A1009BE5A9 /* ActionViewController.swift */,
 				A66881211F1574A1009BE5A9 /* MainInterface.storyboard */,
 				A66881241F1574A1009BE5A9 /* Info.plist */,
+				A65698B81F18276800451FFC /* GoogleService-Info.plist */,
 				A668812C1F1586A9009BE5A9 /* transcribbleactionicon.png */,
 			);
 			path = TranscribbleActionExtension;
@@ -275,6 +284,8 @@
 			children = (
 				166E1E3BCE500F68E6D07D55 /* Pods-Transcribble.debug.xcconfig */,
 				792B9AAD0C4ED548D12763CA /* Pods-Transcribble.release.xcconfig */,
+				0F5CE625B3CE1D25BBA8C5D8 /* Pods-TranscribbleActionExtension.debug.xcconfig */,
+				710041BAB6378E5DED376039 /* Pods-TranscribbleActionExtension.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -344,9 +355,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A66881281F1574A1009BE5A9 /* Build configuration list for PBXNativeTarget "TranscribbleActionExtension" */;
 			buildPhases = (
+				C762467B1FA4E1D1E92D7E40 /* [CP] Check Pods Manifest.lock */,
 				A66881191F1574A1009BE5A9 /* Sources */,
 				A668811A1F1574A1009BE5A9 /* Frameworks */,
 				A668811B1F1574A1009BE5A9 /* Resources */,
+				AB433F4BAEE44E1D00EA57ED /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -457,6 +470,7 @@
 			files = (
 				A66881231F1574A1009BE5A9 /* MainInterface.storyboard in Resources */,
 				A668812D1F1586A9009BE5A9 /* transcribbleactionicon.png in Resources */,
+				A65698B91F18276800451FFC /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -478,7 +492,37 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Transcribble/Pods-Transcribble-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		AB433F4BAEE44E1D00EA57ED /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TranscribbleActionExtension/Pods-TranscribbleActionExtension-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		B69D221C5F97F7DC5F07E50A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		C762467B1FA4E1D1E92D7E40 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -783,6 +827,7 @@
 		};
 		A66881291F1574A1009BE5A9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0F5CE625B3CE1D25BBA8C5D8 /* Pods-TranscribbleActionExtension.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = TranscribbleActionExtension/TranscribbleActionExtension.entitlements;
 				DEVELOPMENT_TEAM = 44L7Q6TC3X;
@@ -797,6 +842,7 @@
 		};
 		A668812A1F1574A1009BE5A9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 710041BAB6378E5DED376039 /* Pods-TranscribbleActionExtension.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = TranscribbleActionExtension/TranscribbleActionExtension.entitlements;
 				DEVELOPMENT_TEAM = 44L7Q6TC3X;
@@ -855,6 +901,7 @@
 				A668812A1F1574A1009BE5A9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

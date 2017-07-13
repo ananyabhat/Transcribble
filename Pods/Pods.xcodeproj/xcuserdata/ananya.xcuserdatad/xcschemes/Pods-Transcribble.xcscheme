@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "1BFC3C0D2D94CD3F226E12ADF7312C26"
+               BlueprintIdentifier = "D8C36E0EE8B82D43CDA14EF25EE30CE8"
                BuildableName = "Pods_Transcribble.framework"
                BlueprintName = "Pods-Transcribble"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "1BFC3C0D2D94CD3F226E12ADF7312C26"
+            BlueprintIdentifier = "D8C36E0EE8B82D43CDA14EF25EE30CE8"
             BuildableName = "Pods_Transcribble.framework"
             BlueprintName = "Pods-Transcribble"
             ReferencedContainer = "container:Pods.xcodeproj">

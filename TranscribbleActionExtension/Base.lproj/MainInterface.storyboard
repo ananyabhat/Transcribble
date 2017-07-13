@@ -48,7 +48,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="aea-oL-URf">
-                                <rect key="frame" x="141" y="154" width="50" height="50"/>
+                                <rect key="frame" x="135" y="154" width="50" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="50" id="L8L-7L-UEz"/>
                                     <constraint firstAttribute="height" constant="50" id="gEU-Bg-iUP"/>
@@ -59,10 +59,8 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="aea-oL-URf" firstAttribute="top" secondItem="NOA-Dm-cuz" secondAttribute="bottom" constant="90" id="4zB-qv-6aM"/>
-                            <constraint firstItem="aea-oL-URf" firstAttribute="leading" secondItem="zMn-AG-sqS" secondAttribute="leadingMargin" constant="125" id="5XU-uY-8dX"/>
                             <constraint firstAttribute="trailing" secondItem="NOA-Dm-cuz" secondAttribute="trailing" id="A05-Pj-hrr"/>
                             <constraint firstItem="NOA-Dm-cuz" firstAttribute="leading" secondItem="zMn-AG-sqS" secondAttribute="leading" id="HxO-8t-aoh"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="aea-oL-URf" secondAttribute="trailing" constant="125" id="Pgf-5e-Ljw"/>
                             <constraint firstItem="Een-XE-vFy" firstAttribute="centerX" secondItem="zMn-AG-sqS" secondAttribute="centerX" id="RCF-H1-B75"/>
                             <constraint firstItem="Een-XE-vFy" firstAttribute="top" secondItem="aea-oL-URf" secondAttribute="bottom" constant="15" id="T10-Tb-pR6"/>
                             <constraint firstAttribute="trailingMargin" secondItem="yvQ-Ms-9CQ" secondAttribute="trailing" constant="34" id="WQa-Aa-fbU"/>
