@@ -34,6 +34,7 @@
 		A66881331F159BCD009BE5A9 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A66881321F159BCD009BE5A9 /* ProfileViewController.swift */; };
 		A6E023F91F192D4B0070691D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E023F81F192D4B0070691D /* User.swift */; };
 		A6E023FB1F192E5D0070691D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E023FA1F192E5D0070691D /* LoginViewController.swift */; };
+		A6E023FD1F1932BD0070691D /* CreateUsernameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E023FC1F1932BD0070691D /* CreateUsernameController.swift */; };
 		E2ABA79C21D20AD85073C2A0 /* Pods_TranscribbleActionExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C283B1E895EE1AA9D7E87D69 /* Pods_TranscribbleActionExtension.framework */; };
 /* End PBXBuildFile section */
 
@@ -116,6 +117,7 @@
 		A66881321F159BCD009BE5A9 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		A6E023F81F192D4B0070691D /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		A6E023FA1F192E5D0070691D /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		A6E023FC1F1932BD0070691D /* CreateUsernameController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateUsernameController.swift; sourceTree = "<group>"; };
 		C283B1E895EE1AA9D7E87D69 /* Pods_TranscribbleActionExtension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TranscribbleActionExtension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -281,6 +283,7 @@
 				A668812C1F1586A9009BE5A9 /* transcribbleactionicon.png */,
 				A6E023F81F192D4B0070691D /* User.swift */,
 				A6E023FA1F192E5D0070691D /* LoginViewController.swift */,
+				A6E023FC1F1932BD0070691D /* CreateUsernameController.swift */,
 			);
 			path = TranscribbleActionExtension;
 			sourceTree = "<group>";
@@ -599,6 +602,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A6E023FB1F192E5D0070691D /* LoginViewController.swift in Sources */,
+				A6E023FD1F1932BD0070691D /* CreateUsernameController.swift in Sources */,
 				A6E023F91F192D4B0070691D /* User.swift in Sources */,
 				A66881201F1574A1009BE5A9 /* ActionViewController.swift in Sources */,
 			);

@@ -1,8 +1,8 @@
 //
-//  CreateUsernameViewController.swift
+//  CreateUsernameController.swift
 //  Transcribble
 //
-//  Created by Ananya Bhat on 7/10/17.
+//  Created by Ananya Bhat on 7/14/17.
 //  Copyright © 2017 Ananya Bhat. All rights reserved.
 //
 
@@ -14,8 +14,9 @@ import FirebaseDatabase
 class CreateUsernameViewController: UIViewController {
     
     @IBOutlet weak var textField: UITextField!
-    @IBOutlet weak var usernameTextField: UITextField!
+    
     @IBOutlet weak var nextButton: UIButton!
+    
     
     @IBAction func nextButtonTapped(_ sender: UIButton) {
         guard let firUser = Auth.auth().currentUser,
@@ -34,7 +35,8 @@ class CreateUsernameViewController: UIViewController {
                 self.view.window?.makeKeyAndVisible()
             }
             
-        }    }
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,6 +47,5 @@ class CreateUsernameViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
     
 }
