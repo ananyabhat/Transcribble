@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ObA-dk-sSI">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Y3v-TL-nhE">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -10,6 +10,79 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Login View Controller-->
+        <scene sceneID="Rmt-1Y-sQy">
+            <objects>
+                <viewController id="Y3v-TL-nhE" customClass="LoginViewController" customModule="TranscribbleActionExtension" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Glt-Ra-lhc"/>
+                        <viewControllerLayoutGuide type="bottom" id="2j7-rg-fyU"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="S03-XH-gVa">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="o3f-b8-kT2">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="251"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" alignment="center" spacing="13" translatesAutoresizingMaskIntoConstraints="NO" id="pMf-hC-D9i">
+                                        <rect key="frame" x="50" y="93" width="276" height="85"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Transcribble" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yUK-SC-mG2">
+                                                <rect key="frame" x="31.5" y="0.0" width="212" height="54"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="36"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Sign up to be able to transcribe recordings" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bE8-R7-Qit">
+                                                <rect key="frame" x="0.0" y="67" width="275.5" height="18"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.97184327410000004" green="0.54034043669999998" blue="0.57275153700000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="pMf-hC-D9i" firstAttribute="centerX" secondItem="o3f-b8-kT2" secondAttribute="centerX" id="Jx1-jQ-469"/>
+                                    <constraint firstAttribute="height" constant="265" id="MLt-11-ePT"/>
+                                    <constraint firstItem="pMf-hC-D9i" firstAttribute="top" secondItem="o3f-b8-kT2" secondAttribute="top" constant="90" id="ZXE-NY-I41"/>
+                                    <constraint firstAttribute="bottom" secondItem="pMf-hC-D9i" secondAttribute="bottom" constant="90" id="dm3-86-hlP"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9sK-AG-o6r">
+                                <rect key="frame" x="51" y="290" width="273" height="44"/>
+                                <color key="backgroundColor" red="0.9649230647" green="0.82773675440000005" blue="0.18138633579999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="HjA-eD-tm8"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
+                                <state key="normal" title="Register or Log in"/>
+                                <connections>
+                                    <action selector="loginButtonTapped:" destination="Y3v-TL-nhE" eventType="touchUpInside" id="ff3-mB-f5Y"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="9sK-AG-o6r" firstAttribute="top" secondItem="o3f-b8-kT2" secondAttribute="bottom" constant="25" id="8ht-d9-hHd"/>
+                            <constraint firstItem="o3f-b8-kT2" firstAttribute="top" secondItem="S03-XH-gVa" secondAttribute="top" id="IgZ-hy-j5c"/>
+                            <constraint firstAttribute="trailing" secondItem="o3f-b8-kT2" secondAttribute="trailing" id="PHZ-vU-v8q"/>
+                            <constraint firstItem="9sK-AG-o6r" firstAttribute="leading" secondItem="S03-XH-gVa" secondAttribute="leadingMargin" constant="35" id="WlP-d6-ZSc"/>
+                            <constraint firstItem="9sK-AG-o6r" firstAttribute="centerX" secondItem="S03-XH-gVa" secondAttribute="centerX" id="aqZ-vD-iYF"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="9sK-AG-o6r" secondAttribute="trailing" constant="35" id="ff3-ss-NMs"/>
+                            <constraint firstItem="o3f-b8-kT2" firstAttribute="leading" secondItem="S03-XH-gVa" secondAttribute="leading" id="pHv-aM-UnD"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="loginButton" destination="9sK-AG-o6r" id="aGk-v9-puM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sjL-CX-oUJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-228" y="187.55622188905548"/>
+        </scene>
         <!--Image-->
         <scene sceneID="7MM-of-jgj">
             <objects>
@@ -78,7 +151,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X47-rx-isc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="137.59999999999999" y="104.34782608695653"/>
+            <point key="canvasLocation" x="-248" y="-498"/>
         </scene>
     </scenes>
 </document>

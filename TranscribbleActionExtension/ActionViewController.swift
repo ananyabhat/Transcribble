@@ -13,10 +13,13 @@ import AVKit
 import FirebaseStorage
 import FirebaseDatabase
 import Firebase
+import FirebaseAuth
 
 class ActionViewController: UIViewController {
 
     @IBOutlet weak var imageView: UIImageView!
+    
+    typealias FIRUser = FirebaseAuth.User
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,8 +46,10 @@ class ActionViewController: UIViewController {
                                             OperationQueue.main.addOperation {
                                                 
                                                 if let audioURL = audioURL as? URL {
-                                                let fileName = NSUUID().uuidString + ".m4a"
-                                            Storage.storage().reference().child("message_voice").child(fileName).putFile(from: audioURL, metadata: nil) { (metadata, error) in
+                                                    let fileName = NSUUID().uuidString + ".m4a"
+                                                    let fireStorage = Storage.storage()
+                                                    let uid = User.curr
+                                                    fireStorage.reference().child("voicemessages/posts/\(uid)/").child(fileName).putFile(from: audioURL, metadata: nil) { (metadata, error) in
                                                         if error != nil {
                                                             print(error ?? "error")
                                                         }
@@ -54,20 +59,20 @@ class ActionViewController: UIViewController {
                                                             let values: [String : Any] = ["audioUrl": downloadUrl]
                                                         }
                                                     }
-                                                
-                                            
-//
-//                                                    let sharedContainerDefaults = UserDefaults.init(suiteName:
-//                                                        "group.com.ananyabhat.transcribble.sharedcontainer")  // must match the name chosen above
-//                                                    sharedContainerDefaults?.set(audioURL as URL, forKey: "SharedAudioURLKey")
-//                                                    sharedContainerDefaults?.synchronize()
-
-//                                                    let theAVPlayer :AVPlayer = AVPlayer(url: audioURL)
-//                                                    let theAVPlayerViewController :AVPlayerViewController = AVPlayerViewController()
-//                                                    theAVPlayerViewController.player = theAVPlayer
-//                                                    self.present(theAVPlayerViewController, animated: true) {
-//                                                        theAVPlayerViewController.player!.play()
-//                                                    }
+                                                    
+                                                    
+                                                    //
+                                                    //                                                    let sharedContainerDefaults = UserDefaults.init(suiteName:
+                                                    //                                                        "group.com.ananyabhat.transcribble.sharedcontainer")  // must match the name chosen above
+                                                    //                                                    sharedContainerDefaults?.set(audioURL as URL, forKey: "SharedAudioURLKey")
+                                                    //                                                    sharedContainerDefaults?.synchronize()
+                                                    
+                                                    //                                                    let theAVPlayer :AVPlayer = AVPlayer(url: audioURL)
+                                                    //                                                    let theAVPlayerViewController :AVPlayerViewController = AVPlayerViewController()
+                                                    //                                                    theAVPlayerViewController.player = theAVPlayer
+                                                    //                                                    self.present(theAVPlayerViewController, animated: true) {
+                                                    //                                                        theAVPlayerViewController.player!.play()
+                                                    //                                                    }
                                                 }
                                             }
                     })
