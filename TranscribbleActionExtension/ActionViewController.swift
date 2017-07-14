@@ -20,19 +20,22 @@ class ActionViewController: UIViewController {
     @IBOutlet weak var imageView: UIImageView!
     
     typealias FIRUser = FirebaseAuth.User
+    
+    var passedInputItems = [Any]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        FirebaseApp.configure()
+        print("action")
+        print(passedInputItems)
         // Get the item[s] we're handling from the extension context.
         
         // For example, look for an image and place it into an image view.
         // Replace this with something appropriate for the type[s] your extension supports.
         
-        print("self.extensionContext!.inputItems = (self.extensionContext!.inputItems)")
+        print("self.extensionContext!.inputItems = \(passedInputItems)")
         
         var audioFound :Bool = false
-        for inputItem: Any in self.extensionContext!.inputItems {
+        for inputItem: Any in passedInputItems {
             let extensionItem = inputItem as! NSExtensionItem
             for attachment: Any in extensionItem.attachments! {
                 print("attachment = \(attachment)")
@@ -46,19 +49,19 @@ class ActionViewController: UIViewController {
                                             OperationQueue.main.addOperation {
                                                 
                                                 if let audioURL = audioURL as? URL {
-                                                    let fileName = NSUUID().uuidString + ".m4a"
-                                                    let fireStorage = Storage.storage()
-                                                    let uid = User.curr
-                                                    fireStorage.reference().child("voicemessages/posts/\(uid)/").child(fileName).putFile(from: audioURL, metadata: nil) { (metadata, error) in
-                                                        if error != nil {
-                                                            print(error ?? "error")
-                                                        }
-                                                        
-                                                        if let downloadUrl = metadata?.downloadURL()?.absoluteString {
-                                                            print(downloadUrl)
-                                                            let values: [String : Any] = ["audioUrl": downloadUrl]
-                                                        }
-                                                    }
+//                                                    let fileName = NSUUID().uuidString + ".m4a"
+//                                                    let fireStorage = Storage.storage()
+//                                                    let uid = FIRUser.
+//                                                    fireStorage.reference().child("voicemessages/posts/\(uid)/").child(fileName).putFile(from: audioURL, metadata: nil) { (metadata, error) in
+//                                                        if error != nil {
+//                                                            print(error ?? "error")
+//                                                        }
+//                                                        
+//                                                        if let downloadUrl = metadata?.downloadURL()?.absoluteString {
+//                                                            print(downloadUrl)
+//                                                            let values: [String : Any] = ["audioUrl": downloadUrl]
+//                                                        }
+//                                                    }
                                                     
                                                     
                                                     //
@@ -96,7 +99,7 @@ class ActionViewController: UIViewController {
     @IBAction func done() {
         // Return any edited content to the host app.
         // This template doesn't do anything, so we just echo the passed in items.
-        self.extensionContext!.completeRequest(returningItems: self.extensionContext!.inputItems, completionHandler: nil)
+        self.extensionContext!.completeRequest(returningItems: passedInputItems, completionHandler: nil)
     }
 
 }

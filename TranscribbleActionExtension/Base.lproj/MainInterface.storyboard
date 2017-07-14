@@ -78,6 +78,7 @@
                     <connections>
                         <outlet property="loginButton" destination="9sK-AG-o6r" id="aGk-v9-puM"/>
                         <segue destination="dch-Fa-rOl" kind="show" identifier="toCreateUsername" id="aFy-XX-bnc"/>
+                        <segue destination="ObA-dk-sSI" kind="show" identifier="loginToAction" id="Ax3-qz-q8G"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sjL-CX-oUJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -164,16 +165,17 @@
                     <connections>
                         <outlet property="nextButton" destination="zKw-ay-fVy" id="eUX-G3-DdK"/>
                         <outlet property="textField" destination="Obr-46-Phk" id="rea-Or-xHP"/>
+                        <segue destination="ObA-dk-sSI" kind="show" identifier="createToAction" id="epA-BS-wcV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="coZ-AV-awY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="617" y="188"/>
         </scene>
-        <!--Image-->
+        <!--Action View Controller-->
         <scene sceneID="7MM-of-jgj">
             <objects>
-                <viewController title="Image" id="ObA-dk-sSI" customClass="ActionViewController" customModule="TranscribbleActionExtension" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="ObA-dk-sSI" customClass="ActionViewController" customModule="TranscribbleActionExtension" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="qkL-Od-lgU"/>
                         <viewControllerLayoutGuide type="bottom" id="n38-gi-rB5"/>
@@ -238,7 +240,10 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X47-rx-isc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-248" y="-498"/>
+            <point key="canvasLocation" x="1328" y="157"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="epA-BS-wcV"/>
+    </inferredMetricsTieBreakers>
 </document>

@@ -20,7 +20,7 @@ class CreateUsernameViewController: UIViewController {
     
     @IBAction func nextButtonTapped(_ sender: UIButton) {
         guard let firUser = Auth.auth().currentUser,
-            let username = usernameTextField.text,
+            let username = textField.text,
             !username.isEmpty else {return}
         
         UserService.create(firUser, username: username) { (user) in
@@ -28,18 +28,25 @@ class CreateUsernameViewController: UIViewController {
             
             User.setCurrent(user)
             
-            let storyboard = UIStoryboard(name: "Main", bundle: .main)
-            
-            if let initialViewController = storyboard.instantiateInitialViewController(){
-                self.view.window?.rootViewController = initialViewController
-                self.view.window?.makeKeyAndVisible()
-            }
+            self.performSegue(withIdentifier: "createToAction", sender: self)
             
         }
     }
     
+    var passedInputItems = [Any]()
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "createToAction"{
+            let destination = segue.destination as! ActionViewController
+            destination.passedInputItems = self.passedInputItems
+        }
+
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("hello")
+        print(passedInputItems)
         // Do any additional setup after loading the view, typically from a nib.
     }
     

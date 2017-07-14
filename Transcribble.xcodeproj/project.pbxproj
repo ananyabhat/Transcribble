@@ -35,6 +35,7 @@
 		A6E023F91F192D4B0070691D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E023F81F192D4B0070691D /* User.swift */; };
 		A6E023FB1F192E5D0070691D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E023FA1F192E5D0070691D /* LoginViewController.swift */; };
 		A6E023FD1F1932BD0070691D /* CreateUsernameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E023FC1F1932BD0070691D /* CreateUsernameController.swift */; };
+		A6E023FF1F193B5E0070691D /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E023FE1F193B5E0070691D /* UserService.swift */; };
 		E2ABA79C21D20AD85073C2A0 /* Pods_TranscribbleActionExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C283B1E895EE1AA9D7E87D69 /* Pods_TranscribbleActionExtension.framework */; };
 /* End PBXBuildFile section */
 
@@ -118,6 +119,7 @@
 		A6E023F81F192D4B0070691D /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		A6E023FA1F192E5D0070691D /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		A6E023FC1F1932BD0070691D /* CreateUsernameController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateUsernameController.swift; sourceTree = "<group>"; };
+		A6E023FE1F193B5E0070691D /* UserService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		C283B1E895EE1AA9D7E87D69 /* Pods_TranscribbleActionExtension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TranscribbleActionExtension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -196,8 +198,7 @@
 				A66880FB1F13E18D009BE5A9 /* Storyboards */,
 				A66880FA1F13E183009BE5A9 /* View Controllers */,
 				A66881001F13EBD0009BE5A9 /* View */,
-				A66880D81F13E0E0009BE5A9 /* Info.plist */,
-				A668810F1F141DEC009BE5A9 /* GoogleService-Info.plist */,
+				A6E024031F193B9B0070691D /* Supporting */,
 				A66880D31F13E0E0009BE5A9 /* Assets.xcassets */,
 				A66881131F1440A8009BE5A9 /* Models */,
 				A66881181F157238009BE5A9 /* Service */,
@@ -276,16 +277,66 @@
 			isa = PBXGroup;
 			children = (
 				A668812F1F1587E2009BE5A9 /* TranscribbleActionExtension.entitlements */,
+				A6E024011F193B7A0070691D /* View Controllers */,
+				A6E024041F193BAC0070691D /* Storyboards */,
+				A6E024021F193B930070691D /* Supporting */,
+				A6E024051F193BB40070691D /* Models */,
+				A6E024061F193BBA0070691D /* Service */,
+			);
+			path = TranscribbleActionExtension;
+			sourceTree = "<group>";
+		};
+		A6E024011F193B7A0070691D /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
 				A668811F1F1574A1009BE5A9 /* ActionViewController.swift */,
-				A66881211F1574A1009BE5A9 /* MainInterface.storyboard */,
-				A66881241F1574A1009BE5A9 /* Info.plist */,
-				A65698B81F18276800451FFC /* GoogleService-Info.plist */,
-				A668812C1F1586A9009BE5A9 /* transcribbleactionicon.png */,
-				A6E023F81F192D4B0070691D /* User.swift */,
 				A6E023FA1F192E5D0070691D /* LoginViewController.swift */,
 				A6E023FC1F1932BD0070691D /* CreateUsernameController.swift */,
 			);
-			path = TranscribbleActionExtension;
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		A6E024021F193B930070691D /* Supporting */ = {
+			isa = PBXGroup;
+			children = (
+				A668812C1F1586A9009BE5A9 /* transcribbleactionicon.png */,
+				A66881241F1574A1009BE5A9 /* Info.plist */,
+				A65698B81F18276800451FFC /* GoogleService-Info.plist */,
+			);
+			name = Supporting;
+			sourceTree = "<group>";
+		};
+		A6E024031F193B9B0070691D /* Supporting */ = {
+			isa = PBXGroup;
+			children = (
+				A66880D81F13E0E0009BE5A9 /* Info.plist */,
+				A668810F1F141DEC009BE5A9 /* GoogleService-Info.plist */,
+			);
+			name = Supporting;
+			sourceTree = "<group>";
+		};
+		A6E024041F193BAC0070691D /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				A66881211F1574A1009BE5A9 /* MainInterface.storyboard */,
+			);
+			name = Storyboards;
+			sourceTree = "<group>";
+		};
+		A6E024051F193BB40070691D /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A6E023F81F192D4B0070691D /* User.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		A6E024061F193BBA0070691D /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				A6E023FE1F193B5E0070691D /* UserService.swift */,
+			);
+			name = Service;
 			sourceTree = "<group>";
 		};
 		DE129E98821E2EB35FB7CFF2 /* Pods */ = {
@@ -602,6 +653,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A6E023FB1F192E5D0070691D /* LoginViewController.swift in Sources */,
+				A6E023FF1F193B5E0070691D /* UserService.swift in Sources */,
 				A6E023FD1F1932BD0070691D /* CreateUsernameController.swift in Sources */,
 				A6E023F91F192D4B0070691D /* User.swift in Sources */,
 				A66881201F1574A1009BE5A9 /* ActionViewController.swift in Sources */,

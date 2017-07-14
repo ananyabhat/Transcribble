@@ -10,6 +10,7 @@ import Foundation
 import FirebaseAuth
 import FirebaseDatabase
 import FirebaseAuthUI
+import Firebase
 
 typealias FIRUser = FirebaseAuth.User
 
@@ -28,6 +29,9 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        FirebaseApp.configure()
+        print("self.extensionContext!.inputItems = \(self.extensionContext!.inputItems)")
+
         // Do any additional setup after loading the view, typically from a nib.
     }
     
@@ -36,6 +40,15 @@ class LoginViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toCreateUsername"{
+            let destination = segue.destination as! CreateUsernameViewController
+            destination.passedInputItems = (self.extensionContext?.inputItems)!
+        }else if segue.identifier == "loginToAction"{
+            let destination = segue.destination as! ActionViewController
+            destination.passedInputItems = (self.extensionContext?.inputItems)!
+        }
+    }
     
     
 }
@@ -51,14 +64,10 @@ extension LoginViewController: FUIAuthDelegate {
         userRef.observeSingleEvent(of: .value, with: {[unowned self] (snapshot) in
             if let user = User(snapshot: snapshot) {
                 User.setCurrent(user)
-                let storyboard = UIStoryboard(name: "Main", bundle: .main)
                 
-                if let initialViewController = storyboard.instantiateInitialViewController(){
-                    self.view.window?.rootViewController = initialViewController
-                    self.view.window?.makeKeyAndVisible()
-                }
+                self.performSegue(withIdentifier: "loginToAction", sender: self)
                 
-            }else{
+                }else{
                 self.performSegue(withIdentifier: "toCreateUsername", sender: self)
             }
         })
