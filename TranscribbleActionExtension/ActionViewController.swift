@@ -100,6 +100,9 @@ class ActionViewController: UIViewController {
         // Return any edited content to the host app.
         // This template doesn't do anything, so we just echo the passed in items.
         self.extensionContext!.completeRequest(returningItems: passedInputItems, completionHandler: nil)
+        self.dismiss(animated: true, completion: nil)
     }
+    
+    
 
 }

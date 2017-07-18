@@ -14,6 +14,8 @@ import Firebase
 
 typealias FIRUser = FirebaseAuth.User
 
+var window: UIWindow?
+
 class LoginViewController: UIViewController {
     
     @IBOutlet weak var loginButton: UIButton!
@@ -30,6 +32,7 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         FirebaseApp.configure()
+        configureInitialRootViewController(for: window)
         print("self.extensionContext!.inputItems = \(self.extensionContext!.inputItems)")
 
         // Do any additional setup after loading the view, typically from a nib.
@@ -50,6 +53,26 @@ class LoginViewController: UIViewController {
         }
     }
     
+    func configureInitialRootViewController(for window: UIWindow?){
+        let defaults = UserDefaults.standard
+        let initialViewController: UIViewController
+        
+        if Auth.auth().currentUser != nil,
+            let userData = defaults.object(forKey: Constants.UserDefaults.currentUser) as? Data,
+            let user = NSKeyedUnarchiver.unarchiveObject(with: userData) as? User {
+            
+            User.setCurrent(user)
+            
+            initialViewController = UIStoryboard.initialViewController(for: .main)
+            
+        }else{
+            initialViewController = UIStoryboard.initialViewController(for: .login)
+        }
+        
+        window?.rootViewController = initialViewController
+        window?.makeKeyAndVisible()
+    }
+    
     
 }
 extension LoginViewController: FUIAuthDelegate {
@@ -60,16 +83,17 @@ extension LoginViewController: FUIAuthDelegate {
         
         guard let user = user
             else {return}
-        let userRef = Database.database().reference().child("users").child(user.uid)
-        userRef.observeSingleEvent(of: .value, with: {[unowned self] (snapshot) in
-            if let user = User(snapshot: snapshot) {
-                User.setCurrent(user)
+        UserService.show(forUID: user.uid) { (user) in
+            if let user = user {
+                // handle existing user
+                User.setCurrent(user, writeToUserDefaults: true)
                 
-                self.performSegue(withIdentifier: "loginToAction", sender: self)
-                
-                }else{
+                let initialViewController = UIStoryboard.initialViewController(for: .main)
+                self.view.window?.rootViewController = initialViewController
+                self.view.window?.makeKeyAndVisible()
+            }else{
                 self.performSegue(withIdentifier: "toCreateUsername", sender: self)
             }
-        })
+        }
     }
 }

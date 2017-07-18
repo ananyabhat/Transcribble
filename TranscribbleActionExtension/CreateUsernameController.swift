@@ -26,7 +26,7 @@ class CreateUsernameViewController: UIViewController {
         UserService.create(firUser, username: username) { (user) in
             guard let user = user else { return }
             
-            User.setCurrent(user)
+            User.setCurrent(user, writeToUserDefaults: true)
             
             self.performSegue(withIdentifier: "createToAction", sender: self)
             
