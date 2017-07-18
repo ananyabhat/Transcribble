@@ -14,7 +14,7 @@ import Firebase
 
 typealias FIRUser = FirebaseAuth.User
 
-var window: UIWindow?
+    var window: UIWindow?
 
 class LoginViewController: UIViewController {
     
@@ -63,14 +63,21 @@ class LoginViewController: UIViewController {
             
             User.setCurrent(user)
             
-            initialViewController = UIStoryboard.initialViewController(for: .main)
+            let storyboard = UIStoryboard(name: "MainInterface", bundle: nil)
             
+            let initialViewController = storyboard.instantiateViewController(withIdentifier: "Action")
+            self.view.window?.rootViewController = initialViewController
+            self.view.window?.makeKeyAndVisible()
+
         }else{
-            initialViewController = UIStoryboard.initialViewController(for: .login)
+            let storyboard = UIStoryboard(name: "MainInterface", bundle: nil)
+            
+            let initialViewController = storyboard.instantiateViewController(withIdentifier: "Login")
+            self.view.window?.rootViewController = initialViewController
+            self.view.window?.makeKeyAndVisible()
+
         }
         
-        window?.rootViewController = initialViewController
-        window?.makeKeyAndVisible()
     }
     
     
@@ -88,9 +95,12 @@ extension LoginViewController: FUIAuthDelegate {
                 // handle existing user
                 User.setCurrent(user, writeToUserDefaults: true)
                 
-                let initialViewController = UIStoryboard.initialViewController(for: .main)
+                let storyboard = UIStoryboard(name: "MainInterface", bundle: nil)
+                
+                let initialViewController = storyboard.instantiateViewController(withIdentifier: "Action")
                 self.view.window?.rootViewController = initialViewController
                 self.view.window?.makeKeyAndVisible()
+                
             }else{
                 self.performSegue(withIdentifier: "toCreateUsername", sender: self)
             }
