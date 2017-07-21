@@ -12,6 +12,10 @@ import FirebaseStorage
 struct StorageService {
     static func uploadAudio(_ audio: URL, at reference: StorageReference, completion: @escaping (URL?) -> Void) {
         
+//        guard let fileUrl = URL(string: audio) else {
+//            return
+//        }
+        
         reference.putFile(from: audio, metadata: nil, completion: { (metadata, error) in
             if let error = error {
                 assertionFailure(error.localizedDescription)
@@ -20,4 +24,6 @@ struct StorageService {
             completion(metadata?.downloadURL())
         })
     }
+    
+   
 }

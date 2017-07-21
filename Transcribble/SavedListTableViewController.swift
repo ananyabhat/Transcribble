@@ -7,23 +7,22 @@
 //
 
 import UIKit
-
-
-let sharedContainerDefaults = UserDefaults.init(suiteName:
-    "group.com.mycompany.myapp.sharedcontainer")  // must match the name chosen above
-let audioURL :NSURL? = sharedContainerDefaults?.url(forKey: "SharedAudioURLKey") as NSURL?
-
-var extensionContext: NSExtensionContext?
-
+import FirebaseDatabase
 
 
 class SavedListTableViewController: UITableViewController {
     
-    
+    var posts = [Any]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(audioURL)
+        
+        Database.database().reference().child("posts").child(User.current.uid).observeSingleEvent(of: .value, with: { (snapshot) in
+            print(snapshot)
+            self.tableView.reloadData()
+        })
+        
+        
         // Do any additional setup after loading the view, typically from a nib.
     }
     
@@ -33,7 +32,7 @@ class SavedListTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return posts.count
     }
     
     // 2

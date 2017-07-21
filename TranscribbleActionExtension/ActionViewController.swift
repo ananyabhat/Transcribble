@@ -27,6 +27,8 @@ class ActionViewController: UIViewController {
         super.viewDidLoad()
         print("action")
         print(passedInputItems)
+        
+        
         // Get the item[s] we're handling from the extension context.
         
         // For example, look for an image and place it into an image view.
@@ -50,42 +52,31 @@ class ActionViewController: UIViewController {
                                                 
                                                 if let audioURL = audioURL as? URL {
                                                     
-                                                    self.putInStorage(audioUrl: audioURL)
-                                                    
-//                                                    FirebaseApp.auth().onAuthStateChanged(function(user) {
-//                                                        if (user) {
-//                                                            // User is signed in.
-//                                                        } else {
-//                                                            // No user is signed in.
-//                                                        }
-//                                                    });
-                                                    //                                                    let fileName = NSUUID().uuidString + ".m4a"
-                                                    //                                                    let fireStorage = Storage.storage()
-                                                    //                                                    let uid = FIRUser.
-                                                    //                                                    fireStorage.reference().child("voicemessages/posts/\(uid)/").child(fileName).putFile(from: audioURL, metadata: nil) { (metadata, error) in
-                                                    //                                                        if error != nil {
-                                                    //                                                            print(error ?? "error")
-                                                    //                                                        }
-                                                    //
-                                                    //                                                        if let downloadUrl = metadata?.downloadURL()?.absoluteString {
-                                                    //                                                            print(downloadUrl)
-                                                    //                                                            let values: [String : Any] = ["audioUrl": downloadUrl]
-                                                    //                                                        }
-                                                    //                                                    }
+                                                    print("LOOK! AN AUDIO URL: \(audioURL)")
                                                     
                                                     
-                                                    //
-                                                    //                                                    let sharedContainerDefaults = UserDefaults.init(suiteName:
-                                                    //                                                        "group.com.ananyabhat.transcribble.sharedcontainer")  // must match the name chosen above
-                                                    //                                                    sharedContainerDefaults?.set(audioURL as URL, forKey: "SharedAudioURLKey")
-                                                    //                                                    sharedContainerDefaults?.synchronize()
+                                                    //self.putInStorage(audioUrl: audioURL)
+                                                    print("UID : \(User.current.uid)")
+                                                    let dateFormatter = ISO8601DateFormatter()
+                                                    let timeStamp = dateFormatter.string(from: Date())
                                                     
-                                                    //                                                    let theAVPlayer :AVPlayer = AVPlayer(url: audioURL)
-                                                    //                                                    let theAVPlayerViewController :AVPlayerViewController = AVPlayerViewController()
-                                                    //                                                    theAVPlayerViewController.player = theAVPlayer
-                                                    //                                                    self.present(theAVPlayerViewController, animated: true) {
-                                                    //                                                        theAVPlayerViewController.player!.play()
-                                                    //                                                    }
+                                                    let storageRef = Storage.storage().reference().child("vn/\(User.current.uid)/\(timeStamp).mp3")
+                                                    //CHANGE EVERYTHING FROM SONG
+                                                    let databaseRef = Database.database().reference().child("posts").child("\(User.current.uid)").childByAutoId()
+                                                
+                                                    guard let audioData = NSData(contentsOf: audioURL) as? Data else {
+                                                        return
+                                                    }
+                                                    storageRef.putData(audioData, metadata: nil, completion: { (metadata, error) in
+                                                        if let error = error {
+                                                            print(error.localizedDescription)
+                                                        }
+                                                        let downloadURL = metadata?.downloadURL()
+                                                        databaseRef.updateChildValues(["title" : "Song", "link":"\(timeStamp)"])
+                                                    })
+                                                    
+
+             
                                                 }
                                             }
                     })
@@ -118,6 +109,7 @@ class ActionViewController: UIViewController {
         let postRef = Database.database().reference().child("posts").child(currentUser.uid).childByAutoId()
     }
     
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -133,3 +125,12 @@ class ActionViewController: UIViewController {
     
     
 }
+
+
+//
+//                                                    let sharedContainerDefaults = UserDefaults.init(suiteName:
+//                                                        "group.com.ananyabhat.transcribble.sharedcontainer")  // must match the name chosen above
+//                                                    sharedContainerDefaults?.set(audioURL as URL, forKey: "SharedAudioURLKey")
+//                                                    sharedContainerDefaults?.synchronize()
+
+//
