@@ -32,7 +32,7 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         FirebaseApp.configure()
-        configureInitialRootViewController(for: window)
+        // configureInitialRootViewController(for: window)
         print("self.extensionContext!.inputItems = \(self.extensionContext!.inputItems)")
 
         // Do any additional setup after loading the view, typically from a nib.
@@ -47,40 +47,42 @@ class LoginViewController: UIViewController {
         if segue.identifier == "toCreateUsername"{
             let destination = segue.destination as! CreateUsernameViewController
             destination.passedInputItems = (self.extensionContext?.inputItems)!
-        }else if segue.identifier == "loginToAction"{
+        }
+        //check to see if action segue works
+        if segue.identifier == "loginToAction"{
             let destination = segue.destination as! ActionViewController
             destination.passedInputItems = (self.extensionContext?.inputItems)!
         }
     }
     
-    func configureInitialRootViewController(for window: UIWindow?){
-        let defaults = UserDefaults.standard
-        let initialViewController: UIViewController
-        
-        if Auth.auth().currentUser != nil,
-            let userData = defaults.object(forKey: Constants.UserDefaults.currentUser) as? Data,
-            let user = NSKeyedUnarchiver.unarchiveObject(with: userData) as? User {
-            
-            User.setCurrent(user)
-            
-            let storyboard = UIStoryboard(name: "MainInterface", bundle: nil)
-            
-            let initialViewController = storyboard.instantiateViewController(withIdentifier: "Action")
-            self.view.window?.rootViewController = initialViewController
-            self.view.window?.makeKeyAndVisible()
-
-        }else{
-            let storyboard = UIStoryboard(name: "MainInterface", bundle: nil)
-            
-            let initialViewController = storyboard.instantiateViewController(withIdentifier: "Login")
-            self.view.window?.rootViewController = initialViewController
-            self.view.window?.makeKeyAndVisible()
-
-        }
-        
-    }
-    
-    
+//    func configureInitialRootViewController(for window: UIWindow?){
+//        let defaults = UserDefaults.standard
+//        let initialViewController: UIViewController
+//        
+//        if Auth.auth().currentUser != nil,
+//            let userData = defaults.object(forKey: Constants.UserDefaults.currentUser) as? Data,
+//            let user = NSKeyedUnarchiver.unarchiveObject(with: userData) as? User {
+//            
+//            User.setCurrent(user)
+//            
+//            let storyboard = UIStoryboard(name: "MainInterface", bundle: nil)
+//            
+//            let initialViewController = storyboard.instantiateViewController(withIdentifier: "Action")
+//            self.view.window?.rootViewController = initialViewController
+//            self.view.window?.makeKeyAndVisible()
+//
+//        }else{
+//            let storyboard = UIStoryboard(name: "MainInterface", bundle: nil)
+//            
+//            let initialViewController = storyboard.instantiateViewController(withIdentifier: "Login")
+//            self.view.window?.rootViewController = initialViewController
+//            self.view.window?.makeKeyAndVisible()
+//
+//        }
+//        
+//    }
+//    
+//    
 }
 extension LoginViewController: FUIAuthDelegate {
     func authUI(_ authUI: FUIAuth, didSignInWith user: FIRUser?, error: Error?){

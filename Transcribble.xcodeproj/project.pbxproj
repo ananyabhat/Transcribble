@@ -32,6 +32,8 @@
 		A668812D1F1586A9009BE5A9 /* transcribbleactionicon.png in Resources */ = {isa = PBXBuildFile; fileRef = A668812C1F1586A9009BE5A9 /* transcribbleactionicon.png */; };
 		A66881311F159BB5009BE5A9 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A66881301F159BB5009BE5A9 /* Profile.storyboard */; };
 		A66881331F159BCD009BE5A9 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A66881321F159BCD009BE5A9 /* ProfileViewController.swift */; };
+		A6BED9711F216777006312A6 /* StorageReference+Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6BED9701F216777006312A6 /* StorageReference+Post.swift */; };
+		A6BED9731F2169E1006312A6 /* StorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6BED9721F2169E1006312A6 /* StorageService.swift */; };
 		A6E023F91F192D4B0070691D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E023F81F192D4B0070691D /* User.swift */; };
 		A6E023FB1F192E5D0070691D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E023FA1F192E5D0070691D /* LoginViewController.swift */; };
 		A6E023FD1F1932BD0070691D /* CreateUsernameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E023FC1F1932BD0070691D /* CreateUsernameController.swift */; };
@@ -120,6 +122,8 @@
 		A668812F1F1587E2009BE5A9 /* TranscribbleActionExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TranscribbleActionExtension.entitlements; sourceTree = "<group>"; };
 		A66881301F159BB5009BE5A9 /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		A66881321F159BCD009BE5A9 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		A6BED9701F216777006312A6 /* StorageReference+Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "StorageReference+Post.swift"; sourceTree = "<group>"; };
+		A6BED9721F2169E1006312A6 /* StorageService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StorageService.swift; sourceTree = "<group>"; };
 		A6E023F81F192D4B0070691D /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		A6E023FA1F192E5D0070691D /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		A6E023FC1F1932BD0070691D /* CreateUsernameController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateUsernameController.swift; sourceTree = "<group>"; };
@@ -347,6 +351,8 @@
 			isa = PBXGroup;
 			children = (
 				A6E023FE1F193B5E0070691D /* UserService.swift */,
+				A6BED9701F216777006312A6 /* StorageReference+Post.swift */,
+				A6BED9721F2169E1006312A6 /* StorageService.swift */,
 			);
 			name = Service;
 			sourceTree = "<group>";
@@ -685,9 +691,11 @@
 				A6E023FB1F192E5D0070691D /* LoginViewController.swift in Sources */,
 				A6E023FF1F193B5E0070691D /* UserService.swift in Sources */,
 				A6E023FD1F1932BD0070691D /* CreateUsernameController.swift in Sources */,
+				A6BED9711F216777006312A6 /* StorageReference+Post.swift in Sources */,
 				A6E023F91F192D4B0070691D /* User.swift in Sources */,
 				A66881201F1574A1009BE5A9 /* ActionViewController.swift in Sources */,
 				A6E024101F1E8F3B0070691D /* Storyboard+Utility.swift in Sources */,
+				A6BED9731F2169E1006312A6 /* StorageService.swift in Sources */,
 				A6E0240D1F1E8ED40070691D /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

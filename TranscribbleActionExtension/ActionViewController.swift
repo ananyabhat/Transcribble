@@ -5,7 +5,6 @@
 //  Created by Ananya Bhat on 7/11/17.
 //  Copyright © 2017 Ananya Bhat. All rights reserved.
 //
-
 import UIKit
 import MobileCoreServices
 import AVFoundation
@@ -14,15 +13,16 @@ import FirebaseStorage
 import FirebaseDatabase
 import Firebase
 import FirebaseAuth
+import FirebaseAuthUI
 
 class ActionViewController: UIViewController {
-
+    
     @IBOutlet weak var imageView: UIImageView!
     
     typealias FIRUser = FirebaseAuth.User
     
     var passedInputItems = [Any]()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         print("action")
@@ -49,19 +49,29 @@ class ActionViewController: UIViewController {
                                             OperationQueue.main.addOperation {
                                                 
                                                 if let audioURL = audioURL as? URL {
-//                                                    let fileName = NSUUID().uuidString + ".m4a"
-//                                                    let fireStorage = Storage.storage()
-//                                                    let uid = FIRUser.
-//                                                    fireStorage.reference().child("voicemessages/posts/\(uid)/").child(fileName).putFile(from: audioURL, metadata: nil) { (metadata, error) in
-//                                                        if error != nil {
-//                                                            print(error ?? "error")
+                                                    
+                                                    self.putInStorage(audioUrl: audioURL)
+                                                    
+//                                                    FirebaseApp.auth().onAuthStateChanged(function(user) {
+//                                                        if (user) {
+//                                                            // User is signed in.
+//                                                        } else {
+//                                                            // No user is signed in.
 //                                                        }
-//                                                        
-//                                                        if let downloadUrl = metadata?.downloadURL()?.absoluteString {
-//                                                            print(downloadUrl)
-//                                                            let values: [String : Any] = ["audioUrl": downloadUrl]
-//                                                        }
-//                                                    }
+//                                                    });
+                                                    //                                                    let fileName = NSUUID().uuidString + ".m4a"
+                                                    //                                                    let fireStorage = Storage.storage()
+                                                    //                                                    let uid = FIRUser.
+                                                    //                                                    fireStorage.reference().child("voicemessages/posts/\(uid)/").child(fileName).putFile(from: audioURL, metadata: nil) { (metadata, error) in
+                                                    //                                                        if error != nil {
+                                                    //                                                            print(error ?? "error")
+                                                    //                                                        }
+                                                    //
+                                                    //                                                        if let downloadUrl = metadata?.downloadURL()?.absoluteString {
+                                                    //                                                            print(downloadUrl)
+                                                    //                                                            let values: [String : Any] = ["audioUrl": downloadUrl]
+                                                    //                                                        }
+                                                    //                                                    }
                                                     
                                                     
                                                     //
@@ -90,12 +100,29 @@ class ActionViewController: UIViewController {
             }
         }
     }
-
+    
+    func putInStorage(audioUrl: URL) {
+        let audioRef = StorageReference.newPostAudioReference()
+        StorageService.uploadAudio(audioUrl, at: audioRef) { (downloadURL) in
+            guard let downloadURL = downloadURL else {
+                return
+            }
+            let urlString = downloadURL.absoluteString
+            self.create(forURLString: urlString)
+        }
+    }
+    
+   func create(forURLString urlString: String) {
+        //create new post in database
+        let currentUser = User.current
+        let postRef = Database.database().reference().child("posts").child(currentUser.uid).childByAutoId()
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
     @IBAction func done() {
         // Return any edited content to the host app.
         // This template doesn't do anything, so we just echo the passed in items.
@@ -104,5 +131,5 @@ class ActionViewController: UIViewController {
     }
     
     
-
+    
 }
