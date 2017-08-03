@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Y3v-TL-nhE">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Y3v-TL-nhE">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -170,7 +170,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="coZ-AV-awY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="617" y="188"/>
+            <point key="canvasLocation" x="1148" y="156"/>
         </scene>
         <!--Action View Controller-->
         <scene sceneID="7MM-of-jgj">
@@ -197,50 +197,46 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please wait ..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Een-XE-vFy">
-                                <rect key="frame" x="109.5" y="219" width="102" height="20.5"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Please name your recording" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pz7-FM-MNo">
+                                <rect key="frame" x="54" y="125" width="213" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your recording is being uploaded to Transcribble" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yvQ-Ms-9CQ">
-                                <rect key="frame" x="50" y="254" width="220" height="40.5"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="aea-oL-URf">
-                                <rect key="frame" x="135" y="154" width="50" height="50"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Title of recording" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KHO-hL-eXs">
+                                <rect key="frame" x="51" y="171" width="218" height="44"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="50" id="L8L-7L-UEz"/>
-                                    <constraint firstAttribute="height" constant="50" id="gEU-Bg-iUP"/>
+                                    <constraint firstAttribute="height" constant="44" id="c9O-10-NPn"/>
                                 </constraints>
-                                <color key="color" red="0.97184327410000004" green="0.54034043669999998" blue="0.57275153700000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </activityIndicatorView>
+                                <color key="textColor" red="0.71764705880000002" green="0.70980392160000005" blue="0.72156862749999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="aea-oL-URf" firstAttribute="top" secondItem="NOA-Dm-cuz" secondAttribute="bottom" constant="90" id="4zB-qv-6aM"/>
+                            <constraint firstItem="pz7-FM-MNo" firstAttribute="top" secondItem="NOA-Dm-cuz" secondAttribute="bottom" constant="61" id="5iw-ka-atd"/>
+                            <constraint firstItem="pz7-FM-MNo" firstAttribute="centerX" secondItem="zMn-AG-sqS" secondAttribute="centerX" id="8cr-O6-3EO"/>
                             <constraint firstAttribute="trailing" secondItem="NOA-Dm-cuz" secondAttribute="trailing" id="A05-Pj-hrr"/>
                             <constraint firstItem="NOA-Dm-cuz" firstAttribute="leading" secondItem="zMn-AG-sqS" secondAttribute="leading" id="HxO-8t-aoh"/>
-                            <constraint firstItem="Een-XE-vFy" firstAttribute="centerX" secondItem="zMn-AG-sqS" secondAttribute="centerX" id="RCF-H1-B75"/>
-                            <constraint firstItem="Een-XE-vFy" firstAttribute="top" secondItem="aea-oL-URf" secondAttribute="bottom" constant="15" id="T10-Tb-pR6"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="yvQ-Ms-9CQ" secondAttribute="trailing" constant="34" id="WQa-Aa-fbU"/>
-                            <constraint firstItem="yvQ-Ms-9CQ" firstAttribute="leading" secondItem="zMn-AG-sqS" secondAttribute="leadingMargin" constant="34" id="eZj-tc-2Xa"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="KHO-hL-eXs" secondAttribute="trailing" constant="35" id="IOv-Wa-XLg"/>
+                            <constraint firstItem="pz7-FM-MNo" firstAttribute="leading" secondItem="zMn-AG-sqS" secondAttribute="leadingMargin" constant="38" id="LDE-t4-fPd"/>
+                            <constraint firstItem="KHO-hL-eXs" firstAttribute="top" secondItem="pz7-FM-MNo" secondAttribute="bottom" constant="25" id="aSa-LB-1Rj"/>
+                            <constraint firstItem="KHO-hL-eXs" firstAttribute="leading" secondItem="zMn-AG-sqS" secondAttribute="leadingMargin" constant="35" id="nRU-H1-EUi"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="pz7-FM-MNo" secondAttribute="trailing" constant="38" id="p9e-V0-koy"/>
                             <constraint firstItem="NOA-Dm-cuz" firstAttribute="top" secondItem="qkL-Od-lgU" secondAttribute="bottom" id="we0-1t-bgp"/>
-                            <constraint firstItem="aea-oL-URf" firstAttribute="centerX" secondItem="zMn-AG-sqS" secondAttribute="centerX" id="yiE-L6-17B"/>
-                            <constraint firstItem="yvQ-Ms-9CQ" firstAttribute="top" secondItem="aea-oL-URf" secondAttribute="bottom" constant="50" id="zJN-iI-Z4U"/>
                         </constraints>
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="320" height="528"/>
                     <connections>
+                        <outlet property="recordingTitleTextField" destination="KHO-hL-eXs" id="srC-5B-8a3"/>
                         <outlet property="view" destination="zMn-AG-sqS" id="Qma-de-2ek"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X47-rx-isc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1328" y="157"/>
+            <point key="canvasLocation" x="1411" y="927"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>

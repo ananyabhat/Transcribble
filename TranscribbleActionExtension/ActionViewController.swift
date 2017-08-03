@@ -17,11 +17,14 @@ import FirebaseAuthUI
 
 class ActionViewController: UIViewController {
     
-    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var recordingTitleTextField: UITextField!
     
     typealias FIRUser = FirebaseAuth.User
     
     var passedInputItems = [Any]()
+    var lvcontroller : LoginViewController? = nil
+    
+    var name : String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,6 +39,19 @@ class ActionViewController: UIViewController {
         
         print("self.extensionContext!.inputItems = \(passedInputItems)")
         
+   }
+    
+        
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    @IBAction func done() {
+        // Return any edited content to the host app.
+        // This template doesn't do anything, so we just echo the passed in items.
+        name = self.recordingTitleTextField.text!
         var audioFound :Bool = false
         for inputItem: Any in passedInputItems {
             let extensionItem = inputItem as! NSExtensionItem
@@ -55,15 +71,14 @@ class ActionViewController: UIViewController {
                                                     print("LOOK! AN AUDIO URL: \(audioURL)")
                                                     
                                                     
-                                                    //self.putInStorage(audioUrl: audioURL)
                                                     print("UID : \(User.current.uid)")
                                                     let dateFormatter = ISO8601DateFormatter()
                                                     let timeStamp = dateFormatter.string(from: Date())
                                                     
-                                                    let storageRef = Storage.storage().reference().child("vn/\(User.current.uid)/\(timeStamp).mp3")
+                                                    let storageRef = Storage.storage().reference().child("vn/\(User.current.uid)/\(timeStamp).m4a")
                                                     //CHANGE EVERYTHING FROM SONG
-                                                    let databaseRef = Database.database().reference().child("posts").child("\(User.current.uid)").childByAutoId()
-                                                
+                                                    let databaseRef = Database.database().reference().child("posts").child("\(User.current.uid)").child("\(self.name)")
+                                                    
                                                     guard let audioData = NSData(contentsOf: audioURL) as? Data else {
                                                         return
                                                     }
@@ -71,12 +86,13 @@ class ActionViewController: UIViewController {
                                                         if let error = error {
                                                             print(error.localizedDescription)
                                                         }
+                                                        print("title=\(self.name)")
                                                         let downloadURL = metadata?.downloadURL()
-                                                        databaseRef.updateChildValues(["title" : "Song", "link":"\(timeStamp)"])
+                                                        databaseRef.updateChildValues(["title" : self.recordingTitleTextField.text, "link":"\(timeStamp)", "transcription" : ""])
                                                     })
                                                     
-
-             
+                                                    
+                                                    
                                                 }
                                             }
                     })
@@ -90,40 +106,11 @@ class ActionViewController: UIViewController {
                 break  // we only handle one audio recording at a time, so stop looking for more
             }
         }
-    }
-    
-    func putInStorage(audioUrl: URL) {
-        let audioRef = StorageReference.newPostAudioReference()
-        StorageService.uploadAudio(audioUrl, at: audioRef) { (downloadURL) in
-            guard let downloadURL = downloadURL else {
-                return
-            }
-            let urlString = downloadURL.absoluteString
-            self.create(forURLString: urlString)
+        if (lvcontroller != nil) {
+            lvcontroller!.extensionContext!.completeRequest(returningItems: nil, completionHandler: nil)
         }
-    }
-    
-   func create(forURLString urlString: String) {
-        //create new post in database
-        let currentUser = User.current
-        let postRef = Database.database().reference().child("posts").child(currentUser.uid).childByAutoId()
-    }
-    
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    @IBAction func done() {
-        // Return any edited content to the host app.
-        // This template doesn't do anything, so we just echo the passed in items.
-        self.extensionContext!.completeRequest(returningItems: passedInputItems, completionHandler: nil)
         self.dismiss(animated: true, completion: nil)
     }
-    
-    
-    
 }
 
 

@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		63B7613E0503DE2B0BF663D4 /* Pods_Transcribble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 717AD6F30FD891E06B0D8AE6 /* Pods_Transcribble.framework */; };
+		A628BE381F317FD700B903BF /* sound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A628BE371F317FD700B903BF /* sound.mp3 */; };
+		A628BE3C1F319A7800B903BF /* sound.m4a in Resources */ = {isa = PBXBuildFile; fileRef = A628BE3B1F319A7800B903BF /* sound.m4a */; };
 		A65698B91F18276800451FFC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A65698B81F18276800451FFC /* GoogleService-Info.plist */; };
 		A66880CD1F13E0E0009BE5A9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A66880CC1F13E0E0009BE5A9 /* AppDelegate.swift */; };
 		A66880D21F13E0E0009BE5A9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A66880D01F13E0E0009BE5A9 /* Main.storyboard */; };
@@ -29,11 +31,8 @@
 		A66881201F1574A1009BE5A9 /* ActionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A668811F1F1574A1009BE5A9 /* ActionViewController.swift */; };
 		A66881231F1574A1009BE5A9 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A66881211F1574A1009BE5A9 /* MainInterface.storyboard */; };
 		A66881271F1574A1009BE5A9 /* TranscribbleActionExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = A668811D1F1574A1009BE5A9 /* TranscribbleActionExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		A668812D1F1586A9009BE5A9 /* transcribbleactionicon.png in Resources */ = {isa = PBXBuildFile; fileRef = A668812C1F1586A9009BE5A9 /* transcribbleactionicon.png */; };
 		A66881311F159BB5009BE5A9 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A66881301F159BB5009BE5A9 /* Profile.storyboard */; };
 		A66881331F159BCD009BE5A9 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A66881321F159BCD009BE5A9 /* ProfileViewController.swift */; };
-		A6BED9711F216777006312A6 /* StorageReference+Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6BED9701F216777006312A6 /* StorageReference+Post.swift */; };
-		A6BED9731F2169E1006312A6 /* StorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6BED9721F2169E1006312A6 /* StorageService.swift */; };
 		A6E023F91F192D4B0070691D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E023F81F192D4B0070691D /* User.swift */; };
 		A6E023FB1F192E5D0070691D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E023FA1F192E5D0070691D /* LoginViewController.swift */; };
 		A6E023FD1F1932BD0070691D /* CreateUsernameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E023FC1F1932BD0070691D /* CreateUsernameController.swift */; };
@@ -42,6 +41,7 @@
 		A6E0240B1F1E8CB40070691D /* Storyboard+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E0240A1F1E8CB40070691D /* Storyboard+Utility.swift */; };
 		A6E0240D1F1E8ED40070691D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E0240C1F1E8ED40070691D /* Constants.swift */; };
 		A6E024101F1E8F3B0070691D /* Storyboard+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E0240F1F1E8F3B0070691D /* Storyboard+Utility.swift */; };
+		A6E5AD701F25DD1400679D31 /* transcribbleactionicon.png in Resources */ = {isa = PBXBuildFile; fileRef = A6E5AD6F1F25DD1400679D31 /* transcribbleactionicon.png */; };
 		E2ABA79C21D20AD85073C2A0 /* Pods_TranscribbleActionExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C283B1E895EE1AA9D7E87D69 /* Pods_TranscribbleActionExtension.framework */; };
 /* End PBXBuildFile section */
 
@@ -89,6 +89,8 @@
 		710041BAB6378E5DED376039 /* Pods-TranscribbleActionExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TranscribbleActionExtension.release.xcconfig"; path = "Pods/Target Support Files/Pods-TranscribbleActionExtension/Pods-TranscribbleActionExtension.release.xcconfig"; sourceTree = "<group>"; };
 		717AD6F30FD891E06B0D8AE6 /* Pods_Transcribble.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Transcribble.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		792B9AAD0C4ED548D12763CA /* Pods-Transcribble.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Transcribble.release.xcconfig"; path = "Pods/Target Support Files/Pods-Transcribble/Pods-Transcribble.release.xcconfig"; sourceTree = "<group>"; };
+		A628BE371F317FD700B903BF /* sound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = sound.mp3; sourceTree = "<group>"; };
+		A628BE3B1F319A7800B903BF /* sound.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = sound.m4a; sourceTree = "<group>"; };
 		A65698B81F18276800451FFC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A66880C91F13E0E0009BE5A9 /* Transcribble.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Transcribble.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A66880CC1F13E0E0009BE5A9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -117,13 +119,10 @@
 		A668811F1F1574A1009BE5A9 /* ActionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionViewController.swift; sourceTree = "<group>"; };
 		A66881221F1574A1009BE5A9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		A66881241F1574A1009BE5A9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A668812C1F1586A9009BE5A9 /* transcribbleactionicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = transcribbleactionicon.png; path = ../../../../Desktop/transcribbleactionicon.png; sourceTree = "<group>"; };
 		A668812E1F158766009BE5A9 /* Transcribble.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Transcribble.entitlements; sourceTree = "<group>"; };
 		A668812F1F1587E2009BE5A9 /* TranscribbleActionExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TranscribbleActionExtension.entitlements; sourceTree = "<group>"; };
 		A66881301F159BB5009BE5A9 /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		A66881321F159BCD009BE5A9 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
-		A6BED9701F216777006312A6 /* StorageReference+Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "StorageReference+Post.swift"; sourceTree = "<group>"; };
-		A6BED9721F2169E1006312A6 /* StorageService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StorageService.swift; sourceTree = "<group>"; };
 		A6E023F81F192D4B0070691D /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		A6E023FA1F192E5D0070691D /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		A6E023FC1F1932BD0070691D /* CreateUsernameController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateUsernameController.swift; sourceTree = "<group>"; };
@@ -132,6 +131,7 @@
 		A6E0240A1F1E8CB40070691D /* Storyboard+Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Storyboard+Utility.swift"; sourceTree = "<group>"; };
 		A6E0240C1F1E8ED40070691D /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		A6E0240F1F1E8F3B0070691D /* Storyboard+Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Storyboard+Utility.swift"; sourceTree = "<group>"; };
+		A6E5AD6F1F25DD1400679D31 /* transcribbleactionicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = transcribbleactionicon.png; sourceTree = "<group>"; };
 		C283B1E895EE1AA9D7E87D69 /* Pods_TranscribbleActionExtension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TranscribbleActionExtension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -313,7 +313,7 @@
 		A6E024021F193B930070691D /* Supporting */ = {
 			isa = PBXGroup;
 			children = (
-				A668812C1F1586A9009BE5A9 /* transcribbleactionicon.png */,
+				A6E5AD6F1F25DD1400679D31 /* transcribbleactionicon.png */,
 				A66881241F1574A1009BE5A9 /* Info.plist */,
 				A65698B81F18276800451FFC /* GoogleService-Info.plist */,
 				A6E0240C1F1E8ED40070691D /* Constants.swift */,
@@ -327,6 +327,8 @@
 				A66880D81F13E0E0009BE5A9 /* Info.plist */,
 				A668810F1F141DEC009BE5A9 /* GoogleService-Info.plist */,
 				A6E024071F1E7D3F0070691D /* Constants.swift */,
+				A628BE3B1F319A7800B903BF /* sound.m4a */,
+				A628BE371F317FD700B903BF /* sound.mp3 */,
 			);
 			name = Supporting;
 			sourceTree = "<group>";
@@ -351,8 +353,6 @@
 			isa = PBXGroup;
 			children = (
 				A6E023FE1F193B5E0070691D /* UserService.swift */,
-				A6BED9701F216777006312A6 /* StorageReference+Post.swift */,
-				A6BED9721F2169E1006312A6 /* StorageService.swift */,
 			);
 			name = Service;
 			sourceTree = "<group>";
@@ -534,6 +534,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A628BE381F317FD700B903BF /* sound.mp3 in Resources */,
+				A628BE3C1F319A7800B903BF /* sound.m4a in Resources */,
 				A668810A1F13F5C5009BE5A9 /* Login.storyboard in Resources */,
 				A66880D71F13E0E0009BE5A9 /* LaunchScreen.storyboard in Resources */,
 				A66880D41F13E0E0009BE5A9 /* Assets.xcassets in Resources */,
@@ -562,8 +564,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A6E5AD701F25DD1400679D31 /* transcribbleactionicon.png in Resources */,
 				A66881231F1574A1009BE5A9 /* MainInterface.storyboard in Resources */,
-				A668812D1F1586A9009BE5A9 /* transcribbleactionicon.png in Resources */,
 				A65698B91F18276800451FFC /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -691,11 +693,9 @@
 				A6E023FB1F192E5D0070691D /* LoginViewController.swift in Sources */,
 				A6E023FF1F193B5E0070691D /* UserService.swift in Sources */,
 				A6E023FD1F1932BD0070691D /* CreateUsernameController.swift in Sources */,
-				A6BED9711F216777006312A6 /* StorageReference+Post.swift in Sources */,
 				A6E023F91F192D4B0070691D /* User.swift in Sources */,
 				A66881201F1574A1009BE5A9 /* ActionViewController.swift in Sources */,
 				A6E024101F1E8F3B0070691D /* Storyboard+Utility.swift in Sources */,
-				A6BED9731F2169E1006312A6 /* StorageService.swift in Sources */,
 				A6E0240D1F1E8ED40070691D /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

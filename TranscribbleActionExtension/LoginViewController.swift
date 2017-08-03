@@ -47,11 +47,14 @@ class LoginViewController: UIViewController {
         if segue.identifier == "toCreateUsername"{
             let destination = segue.destination as! CreateUsernameViewController
             destination.passedInputItems = (self.extensionContext?.inputItems)!
+            destination.lvcontroller = self
         }
         //check to see if action segue works
         if segue.identifier == "loginToAction"{
             let destination = segue.destination as! ActionViewController
             destination.passedInputItems = (self.extensionContext?.inputItems)!
+            destination.lvcontroller = self
+            print(destination.passedInputItems)
         }
     }
     
@@ -96,16 +99,18 @@ extension LoginViewController: FUIAuthDelegate {
             if let user = user {
                 // handle existing user
                 User.setCurrent(user, writeToUserDefaults: true)
+                self.performSegue(withIdentifier: "loginToAction", sender: self)
                 
-                let storyboard = UIStoryboard(name: "MainInterface", bundle: nil)
+//                let storyboard = UIStoryboard(name: "MainInterface", bundle: nil)
                 
-                let initialViewController = storyboard.instantiateViewController(withIdentifier: "Action")
-                self.view.window?.rootViewController = initialViewController
-                self.view.window?.makeKeyAndVisible()
+//                let initialViewController = storyboard.instantiateViewController(withIdentifier: "Action")
+//                self.view.window?.rootViewController = initialViewController
+//                self.view.window?.makeKeyAndVisible()
                 
             }else{
                 self.performSegue(withIdentifier: "toCreateUsername", sender: self)
             }
+//            self.extensionContext!.completeRequest(returningItems: nil, completionHandler: nil)
         }
     }
 }

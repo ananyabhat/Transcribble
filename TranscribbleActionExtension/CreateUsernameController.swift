@@ -17,6 +17,8 @@ class CreateUsernameViewController: UIViewController {
     
     @IBOutlet weak var nextButton: UIButton!
     
+    var lvcontroller : LoginViewController? = nil
+    
     
     @IBAction func nextButtonTapped(_ sender: UIButton) {
         guard let firUser = Auth.auth().currentUser,
@@ -39,6 +41,7 @@ class CreateUsernameViewController: UIViewController {
         if segue.identifier == "createToAction"{
             let destination = segue.destination as! ActionViewController
             destination.passedInputItems = self.passedInputItems
+            destination.lvcontroller = self.lvcontroller
         }
 
     }

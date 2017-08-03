@@ -8,23 +8,60 @@
 
 import UIKit
 import FirebaseDatabase
+import FirebaseStorage
+import AVFoundation
+import AVKit
+import Speech
 
 
-class SavedListTableViewController: UITableViewController {
+class Audio {
+    var title = String()
+    var link = String()
+    var transcription = String()
     
-    var posts = [Any]()
+    init(snapshot: DataSnapshot){
+        if let snap = snapshot.value as? [String: String] {
+            title = snap["title"]!
+            link = snap["link"]!
+            transcription = snap["transcription"]!
+        }
+    }
+}
+
+class SavedListTableViewController: UITableViewController, AVAudioPlayerDelegate {
+    
+        
+    var posts : [Audio] = []
+    
+    func appendAudio() -> [Audio] {
+        var audioFiles = [Audio]()
+        let audioRef = Database.database().reference().child("posts").child("\(User.current.uid)")
+        
+        audioRef.observe(.value, with: {(snapshot)-> Void in
+            for child in snapshot.children {
+                audioFiles.append(Audio(snapshot: child as! DataSnapshot))
+            }
+            self.posts = audioFiles
+            self.tableView.reloadData()
+        })
+        return audioFiles
+    }
+    
+    func reload(){
+        tableView.reloadData()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        Database.database().reference().child("posts").child(User.current.uid).observeSingleEvent(of: .value, with: { (snapshot) in
-            print(snapshot)
-            self.tableView.reloadData()
-        })
+        posts = appendAudio()
+
         
         
         // Do any additional setup after loading the view, typically from a nib.
     }
+    
+
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -41,11 +78,42 @@ class SavedListTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "SavedListTableViewCell", for: indexPath) as! SavedListTableViewCell
         
         // 2
-        cell.transcriptionTitle.text = "Transcription's title"
-        cell.timeCreatedLabel.text = "Time created"
+        cell.transcriptionTitle.text = self.posts[indexPath.row].title
+        print("link: \(self.posts[indexPath.row].link)")
+
         
         return cell
     }
     
-   
+    
+    
+    var valueToPass:String!
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        // Get Cell Label
+        let currentCell = tableView.cellForRow(at: indexPath)! as UITableViewCell
+        
+        valueToPass = self.posts[indexPath.row].link
+        print(valueToPass)
+        performSegue(withIdentifier: "displayTranscription", sender: self)
+    }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "displayTranscription") {
+            print("Table view cell tapped")
+            
+            let indexPath = tableView.indexPathForSelectedRow!
+            
+            let data = indexPath.row
+            print(data)
+            let titleData = posts[indexPath.row].title
+            
+            let displayTranscriptionViewController = segue.destination as! DisplayTranscriptionViewController
+            
+            displayTranscriptionViewController.dataRecieved = data
+            displayTranscriptionViewController.files = posts
+            //displayTranscriptionViewController.titleData = titleData
+        }
+    }
 }
