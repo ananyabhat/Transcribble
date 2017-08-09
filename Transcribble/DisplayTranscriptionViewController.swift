@@ -21,6 +21,14 @@ enum SpeechStatus {
 
 class DisplayTranscriptionViewController: UIViewController, AVAudioPlayerDelegate {
     
+   
+    @IBOutlet weak var playButton: UIButton!
+    
+    @IBOutlet weak var pauseButton: UIButton!
+    
+    
+    @IBOutlet weak var audioSlider: UISlider!
+    
     var files : [Audio] = []   
     var dataRecieved : Int = 0
     var audioPlayer = AVAudioPlayer()
@@ -36,10 +44,13 @@ class DisplayTranscriptionViewController: UIViewController, AVAudioPlayerDelegat
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        print(dataRecieved)
-//        print(files)
-//        print(files[dataRecieved])
+        self.automaticallyAdjustsScrollViewInsets = false
         noteTitle.title = files[dataRecieved].title
+        
+        self.playButton.isHidden = false
+        self.pauseButton.isHidden = true
+
+        
         switch SFSpeechRecognizer.authorizationStatus() {
         case .notDetermined:
             askSpeechPermission()
@@ -76,7 +87,7 @@ class DisplayTranscriptionViewController: UIViewController, AVAudioPlayerDelegat
         return Bundle.main.url(forResource: "sound", withExtension: "m4a")!
     }()
     
-    func downloadAudio() {
+    func downloadAudio() -> URL {
         let dispatchGroup = DispatchGroup()
         var voiceNoteToDownload = files[dataRecieved].link
         
@@ -93,44 +104,53 @@ class DisplayTranscriptionViewController: UIViewController, AVAudioPlayerDelegat
                     print(error.localizedDescription)
                 }
                 
-               self.recognizeFile(url: self.localURL)
-                
-                do {
-                    try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayAndRecord)
-                    
-                    let audiodata = try Data(contentsOf: self.localURL)
-                    
-                    self.audioPlayer = try AVAudioPlayer(data:audiodata)
-                    
-                    self.audioPlayer.delegate = self as! AVAudioPlayerDelegate
-                    
-                    self.audioPlayer.prepareToPlay()
-                    
-                    self.audioPlayer.volume = 1.5
-                    
-                    self.audioPlayer.play()
-                    
-                    print("Audio ready to play")
-                    
-                } catch let error {
-                    print(error.localizedDescription)
-                }
+
                 
             })
         }
+        
+        return localURL
+    }
+    
+    
+    func setUpAudio() {
+        do {
+            try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayAndRecord)
+            
+            localURL = downloadAudio()
+            print("localURL: \(localURL)")
+            
+            let audiodata = try Data(contentsOf: self.localURL)
+            
+            self.audioPlayer = try AVAudioPlayer(data:audiodata)
+            
+            self.audioPlayer.delegate = self as! AVAudioPlayerDelegate
+            
+            self.audioPlayer.prepareToPlay()
+            
+            self.audioPlayer.volume = 1.5
+        
+            print("Audio ready to play")
+            
+        } catch let error {
+            print(error.localizedDescription)
+        }
+        
+
     }
     
     func setTextView(){
         if (files[dataRecieved].transcription == "" ){
             textView.text = "Please wait, your recording is being transcribed"
-            downloadAudio()
+            localURL = downloadAudio()
+            self.recognizeFile(url: self.localURL)
         }else{
             textView.text = files[dataRecieved].transcription
         }
     }
     
     func recognizeFile(url: URL) {
-        print("ARE YOU COMING HERE?")
+        //print("ARE YOU COMING HERE?")
         guard let recognizer = SFSpeechRecognizer(), recognizer.isAvailable else {
             return
         }
@@ -149,12 +169,34 @@ class DisplayTranscriptionViewController: UIViewController, AVAudioPlayerDelegat
 
                     let ref = Database.database().reference().child("posts").child("\(User.current.uid)").child("\(self.files[self.dataRecieved].title)").child("transcription")
                     ref.setValue(self.transcription)
-                    //SavedListTableViewController().reload(SavedListTableViewController)
                 }
             } else if let error = error {
                 print(error)
             }
         }
+    }
+
+    
+    
+    @IBAction func playButtonTapped(_ sender: UIButton) {
+        self.playButton.isHidden = true
+        self.pauseButton.isHidden = false
+        setUpAudio()
+        self.audioPlayer.play()
+    }
+    
+    @IBAction func pauseButtonTapped(_ sender: UIButton) {
+        setUpAudio()
+        self.playButton.isHidden = false
+        self.pauseButton.isHidden = true
+        self.audioPlayer.pause()
+    }
+    
+    
+    
+    
+    func updateSlider() {
+        audioSlider.value = Float(audioPlayer.currentTime)
     }
     
     //hello

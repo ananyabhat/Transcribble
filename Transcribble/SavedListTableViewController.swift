@@ -34,10 +34,10 @@ class SavedListTableViewController: UITableViewController, AVAudioPlayerDelegate
     var posts : [Audio] = []
     
     func appendAudio() -> [Audio] {
-        var audioFiles = [Audio]()
+        var audioFiles : [Audio] = []
         let audioRef = Database.database().reference().child("posts").child("\(User.current.uid)")
-        
         audioRef.observe(.value, with: {(snapshot)-> Void in
+            audioFiles = []
             for child in snapshot.children {
                 audioFiles.append(Audio(snapshot: child as! DataSnapshot))
             }
@@ -54,7 +54,7 @@ class SavedListTableViewController: UITableViewController, AVAudioPlayerDelegate
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        posts = appendAudio()
+        appendAudio()
 
         
         

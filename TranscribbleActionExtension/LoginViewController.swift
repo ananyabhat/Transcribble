@@ -31,11 +31,29 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        FirebaseApp.configure()
+        if FirebaseApp.app() == nil {
+            FirebaseApp.configure()
+        }
+        self.view.isHidden = true
+        // print("Current User: \(User.current.uid)")
         // configureInitialRootViewController(for: window)
+        
         print("self.extensionContext!.inputItems = \(self.extensionContext!.inputItems)")
 
         // Do any additional setup after loading the view, typically from a nib.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        let defaults = UserDefaults.standard
+        
+        if Auth.auth().currentUser != nil,
+            let userData = defaults.object(forKey: Constants.UserDefaults.currentUser) as? Data,
+            let user = NSKeyedUnarchiver.unarchiveObject(with: userData) as? User {
+            User.setCurrent(user)
+            self.performSegue(withIdentifier: "loginToAction", sender: self)
+        } else {
+            self.view.isHidden = false
+        }
     }
     
     override func didReceiveMemoryWarning() {
