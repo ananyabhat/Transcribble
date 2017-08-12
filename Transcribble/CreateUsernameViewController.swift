@@ -11,7 +11,7 @@ import UIKit
 import FirebaseAuth
 import FirebaseDatabase
 
-class CreateUsernameViewController: UIViewController {
+class CreateUsernameViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var usernameTextField: UITextField!
@@ -34,16 +34,20 @@ class CreateUsernameViewController: UIViewController {
                 self.view.window?.makeKeyAndVisible()
             }
             
+            self.dismissKeyboard()
+            
         }    }
+    
+ 
+    
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     

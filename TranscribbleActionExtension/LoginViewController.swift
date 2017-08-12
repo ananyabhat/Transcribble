@@ -29,18 +29,15 @@ class LoginViewController: UIViewController {
 
     }
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         if FirebaseApp.app() == nil {
             FirebaseApp.configure()
         }
         self.view.isHidden = true
-        // print("Current User: \(User.current.uid)")
-        // configureInitialRootViewController(for: window)
         
-        print("self.extensionContext!.inputItems = \(self.extensionContext!.inputItems)")
 
-        // Do any additional setup after loading the view, typically from a nib.
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -58,8 +55,9 @@ class LoginViewController: UIViewController {
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
+    
+ 
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toCreateUsername"{
@@ -67,43 +65,14 @@ class LoginViewController: UIViewController {
             destination.passedInputItems = (self.extensionContext?.inputItems)!
             destination.lvcontroller = self
         }
-        //check to see if action segue works
         if segue.identifier == "loginToAction"{
             let destination = segue.destination as! ActionViewController
             destination.passedInputItems = (self.extensionContext?.inputItems)!
             destination.lvcontroller = self
-            print(destination.passedInputItems)
         }
     }
     
-//    func configureInitialRootViewController(for window: UIWindow?){
-//        let defaults = UserDefaults.standard
-//        let initialViewController: UIViewController
-//        
-//        if Auth.auth().currentUser != nil,
-//            let userData = defaults.object(forKey: Constants.UserDefaults.currentUser) as? Data,
-//            let user = NSKeyedUnarchiver.unarchiveObject(with: userData) as? User {
-//            
-//            User.setCurrent(user)
-//            
-//            let storyboard = UIStoryboard(name: "MainInterface", bundle: nil)
-//            
-//            let initialViewController = storyboard.instantiateViewController(withIdentifier: "Action")
-//            self.view.window?.rootViewController = initialViewController
-//            self.view.window?.makeKeyAndVisible()
-//
-//        }else{
-//            let storyboard = UIStoryboard(name: "MainInterface", bundle: nil)
-//            
-//            let initialViewController = storyboard.instantiateViewController(withIdentifier: "Login")
-//            self.view.window?.rootViewController = initialViewController
-//            self.view.window?.makeKeyAndVisible()
-//
-//        }
-//        
-//    }
-//    
-//    
+
 }
 extension LoginViewController: FUIAuthDelegate {
     func authUI(_ authUI: FUIAuth, didSignInWith user: FIRUser?, error: Error?){
@@ -115,20 +84,13 @@ extension LoginViewController: FUIAuthDelegate {
             else {return}
         UserService.show(forUID: user.uid) { (user) in
             if let user = user {
-                // handle existing user
                 User.setCurrent(user, writeToUserDefaults: true)
                 self.performSegue(withIdentifier: "loginToAction", sender: self)
                 
-//                let storyboard = UIStoryboard(name: "MainInterface", bundle: nil)
-                
-//                let initialViewController = storyboard.instantiateViewController(withIdentifier: "Action")
-//                self.view.window?.rootViewController = initialViewController
-//                self.view.window?.makeKeyAndVisible()
                 
             }else{
                 self.performSegue(withIdentifier: "toCreateUsername", sender: self)
             }
-//            self.extensionContext!.completeRequest(returningItems: nil, completionHandler: nil)
         }
     }
 }

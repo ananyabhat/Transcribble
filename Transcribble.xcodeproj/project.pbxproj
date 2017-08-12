@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		63B7613E0503DE2B0BF663D4 /* Pods_Transcribble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 717AD6F30FD891E06B0D8AE6 /* Pods_Transcribble.framework */; };
-		A628BE381F317FD700B903BF /* sound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A628BE371F317FD700B903BF /* sound.mp3 */; };
-		A628BE3C1F319A7800B903BF /* sound.m4a in Resources */ = {isa = PBXBuildFile; fileRef = A628BE3B1F319A7800B903BF /* sound.m4a */; };
 		A65698B91F18276800451FFC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A65698B81F18276800451FFC /* GoogleService-Info.plist */; };
 		A66880CD1F13E0E0009BE5A9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A66880CC1F13E0E0009BE5A9 /* AppDelegate.swift */; };
 		A66880D21F13E0E0009BE5A9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A66880D01F13E0E0009BE5A9 /* Main.storyboard */; };
@@ -21,9 +19,7 @@
 		A66880FF1F13EBB5009BE5A9 /* SavedListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A66880FE1F13EBB5009BE5A9 /* SavedListTableViewController.swift */; };
 		A66881021F13EC20009BE5A9 /* SavedListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A66881011F13EC20009BE5A9 /* SavedListTableViewCell.swift */; };
 		A66881061F13F4BE009BE5A9 /* DisplayTranscriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A66881051F13F4BE009BE5A9 /* DisplayTranscriptionViewController.swift */; };
-		A66881081F13F4D6009BE5A9 /* UploadInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A66881071F13F4D6009BE5A9 /* UploadInfoViewController.swift */; };
 		A668810A1F13F5C5009BE5A9 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A66881091F13F5C5009BE5A9 /* Login.storyboard */; };
-		A668810E1F13FFE8009BE5A9 /* UploadInfo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A668810D1F13FFE8009BE5A9 /* UploadInfo.storyboard */; };
 		A66881101F141DEC009BE5A9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A668810F1F141DEC009BE5A9 /* GoogleService-Info.plist */; };
 		A66881121F144083009BE5A9 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A66881111F144083009BE5A9 /* User.swift */; };
 		A66881151F14417C009BE5A9 /* CreateUsernameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A66881141F14417C009BE5A9 /* CreateUsernameViewController.swift */; };
@@ -33,6 +29,7 @@
 		A66881271F1574A1009BE5A9 /* TranscribbleActionExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = A668811D1F1574A1009BE5A9 /* TranscribbleActionExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		A66881311F159BB5009BE5A9 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A66881301F159BB5009BE5A9 /* Profile.storyboard */; };
 		A66881331F159BCD009BE5A9 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A66881321F159BCD009BE5A9 /* ProfileViewController.swift */; };
+		A6AFBB681F3C5E1B00880A9A /* transcribbleicon.png in Resources */ = {isa = PBXBuildFile; fileRef = A6AFBB671F3C5E1B00880A9A /* transcribbleicon.png */; };
 		A6E023F91F192D4B0070691D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E023F81F192D4B0070691D /* User.swift */; };
 		A6E023FB1F192E5D0070691D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E023FA1F192E5D0070691D /* LoginViewController.swift */; };
 		A6E023FD1F1932BD0070691D /* CreateUsernameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E023FC1F1932BD0070691D /* CreateUsernameController.swift */; };
@@ -41,7 +38,6 @@
 		A6E0240B1F1E8CB40070691D /* Storyboard+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E0240A1F1E8CB40070691D /* Storyboard+Utility.swift */; };
 		A6E0240D1F1E8ED40070691D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E0240C1F1E8ED40070691D /* Constants.swift */; };
 		A6E024101F1E8F3B0070691D /* Storyboard+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E0240F1F1E8F3B0070691D /* Storyboard+Utility.swift */; };
-		A6E5AD701F25DD1400679D31 /* transcribbleactionicon.png in Resources */ = {isa = PBXBuildFile; fileRef = A6E5AD6F1F25DD1400679D31 /* transcribbleactionicon.png */; };
 		E2ABA79C21D20AD85073C2A0 /* Pods_TranscribbleActionExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C283B1E895EE1AA9D7E87D69 /* Pods_TranscribbleActionExtension.framework */; };
 /* End PBXBuildFile section */
 
@@ -89,8 +85,6 @@
 		710041BAB6378E5DED376039 /* Pods-TranscribbleActionExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TranscribbleActionExtension.release.xcconfig"; path = "Pods/Target Support Files/Pods-TranscribbleActionExtension/Pods-TranscribbleActionExtension.release.xcconfig"; sourceTree = "<group>"; };
 		717AD6F30FD891E06B0D8AE6 /* Pods_Transcribble.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Transcribble.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		792B9AAD0C4ED548D12763CA /* Pods-Transcribble.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Transcribble.release.xcconfig"; path = "Pods/Target Support Files/Pods-Transcribble/Pods-Transcribble.release.xcconfig"; sourceTree = "<group>"; };
-		A628BE371F317FD700B903BF /* sound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = sound.mp3; sourceTree = "<group>"; };
-		A628BE3B1F319A7800B903BF /* sound.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = sound.m4a; sourceTree = "<group>"; };
 		A65698B81F18276800451FFC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A66880C91F13E0E0009BE5A9 /* Transcribble.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Transcribble.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A66880CC1F13E0E0009BE5A9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -108,9 +102,7 @@
 		A66880FE1F13EBB5009BE5A9 /* SavedListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SavedListTableViewController.swift; sourceTree = "<group>"; };
 		A66881011F13EC20009BE5A9 /* SavedListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SavedListTableViewCell.swift; sourceTree = "<group>"; };
 		A66881051F13F4BE009BE5A9 /* DisplayTranscriptionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisplayTranscriptionViewController.swift; sourceTree = "<group>"; };
-		A66881071F13F4D6009BE5A9 /* UploadInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UploadInfoViewController.swift; sourceTree = "<group>"; };
 		A66881091F13F5C5009BE5A9 /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
-		A668810D1F13FFE8009BE5A9 /* UploadInfo.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = UploadInfo.storyboard; sourceTree = "<group>"; };
 		A668810F1F141DEC009BE5A9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A66881111F144083009BE5A9 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		A66881141F14417C009BE5A9 /* CreateUsernameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateUsernameViewController.swift; sourceTree = "<group>"; };
@@ -123,6 +115,7 @@
 		A668812F1F1587E2009BE5A9 /* TranscribbleActionExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TranscribbleActionExtension.entitlements; sourceTree = "<group>"; };
 		A66881301F159BB5009BE5A9 /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		A66881321F159BCD009BE5A9 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		A6AFBB671F3C5E1B00880A9A /* transcribbleicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = transcribbleicon.png; sourceTree = "<group>"; };
 		A6E023F81F192D4B0070691D /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		A6E023FA1F192E5D0070691D /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		A6E023FC1F1932BD0070691D /* CreateUsernameController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateUsernameController.swift; sourceTree = "<group>"; };
@@ -131,7 +124,6 @@
 		A6E0240A1F1E8CB40070691D /* Storyboard+Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Storyboard+Utility.swift"; sourceTree = "<group>"; };
 		A6E0240C1F1E8ED40070691D /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		A6E0240F1F1E8F3B0070691D /* Storyboard+Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Storyboard+Utility.swift"; sourceTree = "<group>"; };
-		A6E5AD6F1F25DD1400679D31 /* transcribbleactionicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = transcribbleactionicon.png; sourceTree = "<group>"; };
 		C283B1E895EE1AA9D7E87D69 /* Pods_TranscribbleActionExtension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TranscribbleActionExtension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -243,7 +235,6 @@
 				A66880FC1F13E1FC009BE5A9 /* LoginViewController.swift */,
 				A66880FE1F13EBB5009BE5A9 /* SavedListTableViewController.swift */,
 				A66881051F13F4BE009BE5A9 /* DisplayTranscriptionViewController.swift */,
-				A66881071F13F4D6009BE5A9 /* UploadInfoViewController.swift */,
 				A66881141F14417C009BE5A9 /* CreateUsernameViewController.swift */,
 				A66881321F159BCD009BE5A9 /* ProfileViewController.swift */,
 			);
@@ -256,7 +247,6 @@
 				A66880D01F13E0E0009BE5A9 /* Main.storyboard */,
 				A66881091F13F5C5009BE5A9 /* Login.storyboard */,
 				A66880D51F13E0E0009BE5A9 /* LaunchScreen.storyboard */,
-				A668810D1F13FFE8009BE5A9 /* UploadInfo.storyboard */,
 				A66881301F159BB5009BE5A9 /* Profile.storyboard */,
 			);
 			name = Storyboards;
@@ -313,9 +303,9 @@
 		A6E024021F193B930070691D /* Supporting */ = {
 			isa = PBXGroup;
 			children = (
-				A6E5AD6F1F25DD1400679D31 /* transcribbleactionicon.png */,
 				A66881241F1574A1009BE5A9 /* Info.plist */,
 				A65698B81F18276800451FFC /* GoogleService-Info.plist */,
+				A6AFBB671F3C5E1B00880A9A /* transcribbleicon.png */,
 				A6E0240C1F1E8ED40070691D /* Constants.swift */,
 			);
 			name = Supporting;
@@ -327,8 +317,6 @@
 				A66880D81F13E0E0009BE5A9 /* Info.plist */,
 				A668810F1F141DEC009BE5A9 /* GoogleService-Info.plist */,
 				A6E024071F1E7D3F0070691D /* Constants.swift */,
-				A628BE3B1F319A7800B903BF /* sound.m4a */,
-				A628BE371F317FD700B903BF /* sound.mp3 */,
 			);
 			name = Supporting;
 			sourceTree = "<group>";
@@ -534,13 +522,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A628BE381F317FD700B903BF /* sound.mp3 in Resources */,
-				A628BE3C1F319A7800B903BF /* sound.m4a in Resources */,
 				A668810A1F13F5C5009BE5A9 /* Login.storyboard in Resources */,
 				A66880D71F13E0E0009BE5A9 /* LaunchScreen.storyboard in Resources */,
 				A66880D41F13E0E0009BE5A9 /* Assets.xcassets in Resources */,
 				A66880D21F13E0E0009BE5A9 /* Main.storyboard in Resources */,
-				A668810E1F13FFE8009BE5A9 /* UploadInfo.storyboard in Resources */,
 				A66881311F159BB5009BE5A9 /* Profile.storyboard in Resources */,
 				A66881101F141DEC009BE5A9 /* GoogleService-Info.plist in Resources */,
 			);
@@ -564,7 +549,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A6E5AD701F25DD1400679D31 /* transcribbleactionicon.png in Resources */,
+				A6AFBB681F3C5E1B00880A9A /* transcribbleicon.png in Resources */,
 				A66881231F1574A1009BE5A9 /* MainInterface.storyboard in Resources */,
 				A65698B91F18276800451FFC /* GoogleService-Info.plist in Resources */,
 			);
@@ -663,7 +648,6 @@
 				A66881171F157232009BE5A9 /* UserService.swift in Sources */,
 				A66880FF1F13EBB5009BE5A9 /* SavedListTableViewController.swift in Sources */,
 				A66881121F144083009BE5A9 /* User.swift in Sources */,
-				A66881081F13F4D6009BE5A9 /* UploadInfoViewController.swift in Sources */,
 				A66880CD1F13E0E0009BE5A9 /* AppDelegate.swift in Sources */,
 				A66881021F13EC20009BE5A9 /* SavedListTableViewCell.swift in Sources */,
 				A66881151F14417C009BE5A9 /* CreateUsernameViewController.swift in Sources */,
@@ -849,7 +833,7 @@
 				DEVELOPMENT_TEAM = 44L7Q6TC3X;
 				INFOPLIST_FILE = Transcribble/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.ananyabhat.Transcribble;
+				PRODUCT_BUNDLE_IDENTIFIER = com.TheGirlCode.Transcribble;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -865,7 +849,7 @@
 				DEVELOPMENT_TEAM = 44L7Q6TC3X;
 				INFOPLIST_FILE = Transcribble/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.ananyabhat.Transcribble;
+				PRODUCT_BUNDLE_IDENTIFIER = com.TheGirlCode.Transcribble;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -937,7 +921,7 @@
 				DEVELOPMENT_TEAM = 44L7Q6TC3X;
 				INFOPLIST_FILE = TranscribbleActionExtension/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.ananyabhat.Transcribble.TranscribbleActionExtension;
+				PRODUCT_BUNDLE_IDENTIFIER = com.TheGirlCode.Transcribble.TranscribbleActionExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;
@@ -952,7 +936,7 @@
 				DEVELOPMENT_TEAM = 44L7Q6TC3X;
 				INFOPLIST_FILE = TranscribbleActionExtension/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.ananyabhat.Transcribble.TranscribbleActionExtension;
+				PRODUCT_BUNDLE_IDENTIFIER = com.TheGirlCode.Transcribble.TranscribbleActionExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;

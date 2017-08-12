@@ -30,6 +30,7 @@ class Audio {
 
 class SavedListTableViewController: UITableViewController, AVAudioPlayerDelegate {
     
+    @IBOutlet var uploadView: UIView!
         
     var posts : [Audio] = []
     
@@ -55,65 +56,116 @@ class SavedListTableViewController: UITableViewController, AVAudioPlayerDelegate
         super.viewDidLoad()
         
         appendAudio()
-
         
         
-        // Do any additional setup after loading the view, typically from a nib.
+        
     }
     
 
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return posts.count
     }
     
-    // 2
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        // 3
         let cell = tableView.dequeueReusableCell(withIdentifier: "SavedListTableViewCell", for: indexPath) as! SavedListTableViewCell
         
-        // 2
         cell.transcriptionTitle.text = self.posts[indexPath.row].title
-        print("link: \(self.posts[indexPath.row].link)")
 
         
         return cell
     }
     
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            var post = posts[indexPath.row]
+            let storageRef = Storage.storage().reference().child("vn/\(User.current.uid)/\(post.link).m4a")
+            storageRef.delete(completion: { error in
+                if error != nil {
+                    print("error \(error)")
+                }
+            })
+            let ref = Database.database().reference()
+            ref.child("posts").child("\(User.current.uid)").child("\(post.title)").removeValue { error in
+                if error != nil {
+                    print("error \(error)")
+                }
+            }
+
+        }
+    }
     
     
     var valueToPass:String!
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        // Get Cell Label
         let currentCell = tableView.cellForRow(at: indexPath)! as UITableViewCell
         
         valueToPass = self.posts[indexPath.row].link
-        print(valueToPass)
         performSegue(withIdentifier: "displayTranscription", sender: self)
     }
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "displayTranscription") {
-            print("Table view cell tapped")
             
             let indexPath = tableView.indexPathForSelectedRow!
             
             let data = indexPath.row
-            print(data)
             let titleData = posts[indexPath.row].title
             
             let displayTranscriptionViewController = segue.destination as! DisplayTranscriptionViewController
             
             displayTranscriptionViewController.dataRecieved = data
             displayTranscriptionViewController.files = posts
-            //displayTranscriptionViewController.titleData = titleData
+        } else if (segue.identifier == "showProfile"){
+        let profileViewController = segue.destination as! ProfileViewController
+        profileViewController.transcriptionsNumber = posts.count
         }
     }
+    
+    func animateInAgain() {
+        self.view.addSubview(uploadView)
+        uploadView.center = self.view.center
+        uploadView.isHidden = false
+        uploadView.alpha = 0
+        
+        
+        
+        UIView.animate(withDuration: 0.4) {
+            self.uploadView.layer.borderWidth = 1
+            self.uploadView.layer.borderColor =  UIColor(red:0.97, green:0.54, blue:0.57, alpha:1.0).cgColor
+            self.uploadView.alpha = 1
+            self.uploadView.transform = CGAffineTransform.identity
+            
+        }
+        
+    }
+
+    
+    
+    @IBAction func closeButtonTapped(_ sender: UIButton) {
+        uploadView.isHidden = true
+    }
+   
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        var touch: UITouch? = touches.first as! UITouch
+                if touch?.view != uploadView {
+            uploadView.isHidden = true
+        }
+        
+    }
+    
+    
+    @IBAction func settingsTapped(_ sender: UIBarButtonItem) {
+        performSegue(withIdentifier: "showProfile", sender: self)
+    }
+    @IBAction func addButtonTapped(_ sender: UIBarButtonItem) {
+        animateInAgain()
+    }
+    
 }

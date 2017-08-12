@@ -23,12 +23,9 @@ class User: NSObject {
     }
     
     class func setCurrent(_ user: User, writeToUserDefaults: Bool = false) {
-        // 2
         if writeToUserDefaults {
-            // 3
             let data = NSKeyedArchiver.archivedData(withRootObject: user)
             
-            // 4
             UserDefaults.standard.set(data, forKey: Constants.UserDefaults.currentUser)
         }
         

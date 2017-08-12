@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="kEA-Gg-aK3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="kEA-Gg-aK3">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -20,12 +20,119 @@
                     <view key="view" contentMode="scaleToFill" id="bZj-fe-7MI">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xyv-O9-Zfu">
+                                <rect key="frame" x="127" y="434" width="120" height="44"/>
+                                <color key="backgroundColor" red="0.97254901959999995" green="0.54117647059999996" blue="0.57254901960000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="120" id="RLB-Iw-ilH"/>
+                                    <constraint firstAttribute="height" constant="44" id="eUe-3S-ieM"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="19"/>
+                                <state key="normal" title="Logout"/>
+                                <connections>
+                                    <action selector="logoutButtonTapped:" destination="kEA-Gg-aK3" eventType="touchUpInside" id="0qK-Uv-hYY"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="username" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xM1-B8-o9L">
+                                <rect key="frame" x="128.5" y="95" width="118.5" height="45"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="27"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Number of recordings you've transcribed:" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9eI-G9-vgV">
+                                <rect key="frame" x="37.5" y="170" width="300" height="57.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="gpO-9m-aPE"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="21"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KJU-kb-Dmf">
+                                <rect key="frame" x="325" y="30" width="30" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="30" id="TxN-eE-4fj"/>
+                                    <constraint firstAttribute="height" constant="40" id="W3w-fZ-xuR"/>
+                                </constraints>
+                                <state key="normal" image="info_pink"/>
+                                <connections>
+                                    <action selector="infoButtonTapped:" destination="kEA-Gg-aK3" eventType="touchUpInside" id="jCS-ZN-e6E"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X9b-2b-bEQ">
+                                <rect key="frame" x="126.5" y="243" width="121.5" height="68.5"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="50"/>
+                                <color key="textColor" red="0.97254901959999995" green="0.54117647059999996" blue="0.57254901960000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="9eI-G9-vgV" firstAttribute="centerX" secondItem="bZj-fe-7MI" secondAttribute="centerX" id="5dq-yO-2uc"/>
+                            <constraint firstItem="xM1-B8-o9L" firstAttribute="centerX" secondItem="bZj-fe-7MI" secondAttribute="centerX" id="7CG-z1-KeS"/>
+                            <constraint firstItem="X9b-2b-bEQ" firstAttribute="top" secondItem="9eI-G9-vgV" secondAttribute="bottom" constant="16" id="D4n-Ip-k82"/>
+                            <constraint firstItem="xM1-B8-o9L" firstAttribute="top" secondItem="T08-kS-Oem" secondAttribute="bottom" constant="75" id="DCy-ba-oXv"/>
+                            <constraint firstItem="Xyv-O9-Zfu" firstAttribute="top" secondItem="X9b-2b-bEQ" secondAttribute="bottom" constant="123" id="Yga-ox-6Fb"/>
+                            <constraint firstItem="KJU-kb-Dmf" firstAttribute="leading" secondItem="bZj-fe-7MI" secondAttribute="leading" constant="325" id="cvA-Gv-tSi"/>
+                            <constraint firstItem="Xyv-O9-Zfu" firstAttribute="centerX" secondItem="bZj-fe-7MI" secondAttribute="centerX" id="kV7-4j-fn0"/>
+                            <constraint firstItem="X9b-2b-bEQ" firstAttribute="centerX" secondItem="bZj-fe-7MI" secondAttribute="centerX" id="krF-IC-A6a"/>
+                            <constraint firstAttribute="trailing" secondItem="KJU-kb-Dmf" secondAttribute="trailing" constant="10" id="lTl-Zv-2N3"/>
+                            <constraint firstItem="KJU-kb-Dmf" firstAttribute="top" secondItem="T08-kS-Oem" secondAttribute="bottom" constant="10" id="sHJ-s3-6PF"/>
+                            <constraint firstItem="9eI-G9-vgV" firstAttribute="top" secondItem="xM1-B8-o9L" secondAttribute="bottom" constant="30" id="uSc-YQ-MMw"/>
+                            <constraint firstItem="9eI-G9-vgV" firstAttribute="top" secondItem="KJU-kb-Dmf" secondAttribute="bottom" constant="100" id="wZ3-aF-IdV"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="imageView" destination="9uH-Bl-uv0" id="dNj-nu-Dkx"/>
+                        <outlet property="infoView" destination="ppq-Kw-8TC" id="ZoA-z1-0Ux"/>
+                        <outlet property="logoutButton" destination="Xyv-O9-Zfu" id="sRa-gk-ShI"/>
+                        <outlet property="transcriptionNumberLabel" destination="X9b-2b-bEQ" id="egu-6A-Xkp"/>
+                        <outlet property="usernameLabel" destination="xM1-B8-o9L" id="cWT-MX-Jhx"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VEF-ej-sJV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <view contentMode="scaleToFill" id="ppq-Kw-8TC">
+                    <rect key="frame" x="0.0" y="0.0" width="330" height="325"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="TKh-WL-T7U">
+                            <rect key="frame" x="16" y="108" width="298" height="202"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="298" id="0bM-8F-LVo"/>
+                                <constraint firstAttribute="height" constant="202" id="hBH-w7-1CE"/>
+                            </constraints>
+                            <mutableString key="text">Ananya Bhat created Transcribble during the summer of 2017. As a student journalist and Editor in Chief of her high school newspaper, she wanted to create an app that would help her fellow journalists easily transcribe the long interviews they often recorded for the stories they wrote. Transcribble does exactly that by using a speech to text framework to convert recordings that users upload into text. Check out some of Ananya's other apps that she created with TheGirlCode, including Chroma and BobaBeacon. All are available on the iOS App store today!
+
+Transcribble respects your privacy and does not access your microphone, but does request access to certain Speech Recognition services on your device. If you would like to change this, you can manage this in settings. Additionally, Transcribble only accepts audio files in the format of an m4a. </mutableString>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                        </textView>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="me" translatesAutoresizingMaskIntoConstraints="NO" id="9uH-Bl-uv0">
+                            <rect key="frame" x="115" y="7" width="100" height="100"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="100" id="3Pe-CD-WB2"/>
+                                <constraint firstAttribute="height" constant="100" id="zg0-TX-RHN"/>
+                            </constraints>
+                        </imageView>
+                    </subviews>
+                    <color key="backgroundColor" red="0.97254901959999995" green="0.54117647059999996" blue="0.57254901960000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstItem="9uH-Bl-uv0" firstAttribute="centerX" secondItem="ppq-Kw-8TC" secondAttribute="centerX" id="7mz-wo-O5C"/>
+                        <constraint firstAttribute="bottom" secondItem="TKh-WL-T7U" secondAttribute="bottom" constant="12" id="Nw8-jK-Fea"/>
+                        <constraint firstItem="9uH-Bl-uv0" firstAttribute="top" secondItem="ppq-Kw-8TC" secondAttribute="top" constant="7" id="gbp-gy-bSd"/>
+                        <constraint firstItem="TKh-WL-T7U" firstAttribute="centerX" secondItem="ppq-Kw-8TC" secondAttribute="centerX" id="rXx-pg-FtN"/>
+                        <constraint firstItem="TKh-WL-T7U" firstAttribute="top" secondItem="9uH-Bl-uv0" secondAttribute="bottom" constant="1" id="sM2-2q-MgX"/>
+                        <constraint firstItem="TKh-WL-T7U" firstAttribute="top" secondItem="ppq-Kw-8TC" secondAttribute="top" constant="111" id="yLX-34-gkk"/>
+                    </constraints>
+                </view>
             </objects>
-            <point key="canvasLocation" x="41" y="-204"/>
+            <point key="canvasLocation" x="40.799999999999997" y="-204.64767616191907"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="info_pink" width="40" height="40"/>
+        <image name="me" width="1197" height="1197"/>
+    </resources>
 </document>

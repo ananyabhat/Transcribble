@@ -1,7 +1,11 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -16,12 +20,41 @@
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="transcribbleBig" translatesAutoresizingMaskIntoConstraints="NO" id="Wuy-S0-vQr">
+                                <rect key="frame" x="-13" y="55" width="400" height="400"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="400" id="eV9-l4-W0c"/>
+                                    <constraint firstAttribute="width" constant="400" id="uju-l0-eNs"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="transcribbling..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QuS-LX-P8i">
+                                <rect key="frame" x="103" y="435" width="168" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="5Jq-7p-0gW"/>
+                                    <constraint firstAttribute="width" constant="168" id="i30-kN-JuZ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="24"/>
+                                <color key="textColor" red="0.97254901959999995" green="0.54117647059999996" blue="0.57254901960000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="QuS-LX-P8i" secondAttribute="bottom" constant="184" id="1mI-pz-mJu"/>
+                            <constraint firstItem="Wuy-S0-vQr" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="Atl-5I-28N"/>
+                            <constraint firstItem="QuS-LX-P8i" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="IOy-IV-e7v"/>
+                            <constraint firstItem="QuS-LX-P8i" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="415" id="lyb-aT-y2Q"/>
+                            <constraint firstItem="Wuy-S0-vQr" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="35" id="wtR-hL-EjN"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="53" y="375"/>
+            <point key="canvasLocation" x="52" y="374.66266866566718"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="transcribbleBig" width="1024" height="1024"/>
+    </resources>
 </document>

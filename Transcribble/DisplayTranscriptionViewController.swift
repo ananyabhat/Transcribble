@@ -19,7 +19,7 @@ enum SpeechStatus {
     case unavailable
 }
 
-class DisplayTranscriptionViewController: UIViewController, AVAudioPlayerDelegate {
+class DisplayTranscriptionViewController: UIViewController, AVAudioPlayerDelegate, UITextViewDelegate {
     
    
     @IBOutlet weak var playButton: UIButton!
@@ -50,6 +50,7 @@ class DisplayTranscriptionViewController: UIViewController, AVAudioPlayerDelegat
         self.playButton.isHidden = false
         self.pauseButton.isHidden = true
 
+        textView.delegate = self
         
         switch SFSpeechRecognizer.authorizationStatus() {
         case .notDetermined:
@@ -59,9 +60,13 @@ class DisplayTranscriptionViewController: UIViewController, AVAudioPlayerDelegat
         case .denied, .restricted:
             self.status = .unavailable
         }
-        setTextView()
+        downloadAudio()
         
-        // Do any additional setup after loading the view, typically from a nib.
+
+        
+        self.hideKeyboardWhenTappedAround()
+
+        
     }
     
     func askSpeechPermission() {
@@ -80,14 +85,10 @@ class DisplayTranscriptionViewController: UIViewController, AVAudioPlayerDelegat
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
+
     
-    var preRecordedAudioURL: URL = {
-        return Bundle.main.url(forResource: "sound", withExtension: "m4a")!
-    }()
-    
-    func downloadAudio() -> URL {
+    func downloadAudio() {
         let dispatchGroup = DispatchGroup()
         var voiceNoteToDownload = files[dataRecieved].link
         
@@ -97,28 +98,23 @@ class DisplayTranscriptionViewController: UIViewController, AVAudioPlayerDelegat
             
             let documentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
             self.localURL = documentsURL.appendingPathComponent("voicememos/\(voiceNoteToDownload).m4a")
-            print("LOOK A URL:\(self.localURL)")
             
             let downloadTask = downloadRef.write(toFile: self.localURL, completion: { (url, error) in
                 if let error = error {
                     print(error.localizedDescription)
                 }
-                
-
-                
+                self.setupAudio()
+                self.setTextView()
+                var timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: Selector("updateSlider"), userInfo: nil, repeats: true)
             })
         }
-        
-        return localURL
     }
     
     
-    func setUpAudio() {
+    
+    func setupAudio() {
         do {
             try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayAndRecord)
-            
-            localURL = downloadAudio()
-            print("localURL: \(localURL)")
             
             let audiodata = try Data(contentsOf: self.localURL)
             
@@ -128,36 +124,41 @@ class DisplayTranscriptionViewController: UIViewController, AVAudioPlayerDelegat
             
             self.audioPlayer.prepareToPlay()
             
-            self.audioPlayer.volume = 1.5
-        
-            print("Audio ready to play")
+            self.audioPlayer.volume = 2.5
+            
+            self.audioSlider.maximumValue = Float(self.audioPlayer.duration)
             
         } catch let error {
             print(error.localizedDescription)
         }
-        
 
     }
     
     func setTextView(){
         if (files[dataRecieved].transcription == "" ){
             textView.text = "Please wait, your recording is being transcribed"
-            localURL = downloadAudio()
             self.recognizeFile(url: self.localURL)
         }else{
             textView.text = files[dataRecieved].transcription
         }
     }
     
+    
+    
+    func textViewDidEndEditing(_ textView: UITextView) {
+        let ref = Database.database().reference().child("posts").child("\(User.current.uid)").child("\(self.files[self.dataRecieved].title)").child("transcription")
+        ref.setValue(self.textView.text)
+    }
+    
+    
     func recognizeFile(url: URL) {
-        //print("ARE YOU COMING HERE?")
         guard let recognizer = SFSpeechRecognizer(), recognizer.isAvailable else {
             return
         }
         
         let request = SFSpeechURLRecognitionRequest(url: url)
         recognizer.recognitionTask(with: request) { result, error in
-
+            
             if let result = result {
                 self.transcription = result.bestTranscription.formattedString
                 self.textView.text = self.transcription
@@ -166,7 +167,7 @@ class DisplayTranscriptionViewController: UIViewController, AVAudioPlayerDelegat
                     self.transcription = result.bestTranscription.formattedString
                     self.textView.text = self.transcription
                     
-
+                    
                     let ref = Database.database().reference().child("posts").child("\(User.current.uid)").child("\(self.files[self.dataRecieved].title)").child("transcription")
                     ref.setValue(self.transcription)
                 }
@@ -181,12 +182,10 @@ class DisplayTranscriptionViewController: UIViewController, AVAudioPlayerDelegat
     @IBAction func playButtonTapped(_ sender: UIButton) {
         self.playButton.isHidden = true
         self.pauseButton.isHidden = false
-        setUpAudio()
         self.audioPlayer.play()
     }
     
     @IBAction func pauseButtonTapped(_ sender: UIButton) {
-        setUpAudio()
         self.playButton.isHidden = false
         self.pauseButton.isHidden = true
         self.audioPlayer.pause()
@@ -200,5 +199,38 @@ class DisplayTranscriptionViewController: UIViewController, AVAudioPlayerDelegat
     }
     
     //hello
+    @IBAction func changeAudio(_ sender: UISlider) {
+        audioPlayer.stop()
+        audioPlayer.currentTime = TimeInterval(audioSlider.value)
+        audioPlayer.prepareToPlay()
+        audioPlayer.play()
+
+    }
     
+    @IBAction func shareTextButton(_ sender: UIButton) {
+        
+        let text = self.textView.text
+        
+        let textToShare = [ text ]
+        let activityViewController = UIActivityViewController(activityItems: textToShare, applicationActivities: nil)
+        activityViewController.popoverPresentationController?.sourceView = self.view
+        
+        activityViewController.excludedActivityTypes = [ UIActivityType.airDrop, UIActivityType.postToFacebook ]
+        
+        self.present(activityViewController, animated: true, completion: nil)
+        
+    }
+    
+}
+
+extension UIViewController {
+    func hideKeyboardWhenTappedAround() {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+    
+    func dismissKeyboard() {
+        view.endEditing(true)
+    }
 }

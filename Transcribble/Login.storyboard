@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="3U4-Uj-vvw">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="3U4-Uj-vvw">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -13,7 +13,7 @@
         <!--Login View Controller-->
         <scene sceneID="IC1-8c-Tzv">
             <objects>
-                <viewController id="uy4-IK-1jk" customClass="LoginViewController" customModule="Transcribble" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Login" id="uy4-IK-1jk" customClass="LoginViewController" customModule="Transcribble" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="wkz-Hk-MAY"/>
                         <viewControllerLayoutGuide type="bottom" id="AsI-pZ-Mep"/>
@@ -26,10 +26,10 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="252"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" alignment="center" spacing="13" translatesAutoresizingMaskIntoConstraints="NO" id="rrW-rX-zwz">
-                                        <rect key="frame" x="49" y="89" width="276" height="85"/>
+                                        <rect key="frame" x="49" y="89" width="275.5" height="85"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Transcribble" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eOS-xD-uuf">
-                                                <rect key="frame" x="31.5" y="0.0" width="212" height="54"/>
+                                                <rect key="frame" x="32" y="0.0" width="212" height="54"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="36"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
@@ -65,6 +65,7 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <accessibility key="accessibilityConfiguration" identifier="Login"/>
                         <constraints>
                             <constraint firstItem="4Ey-0Q-73P" firstAttribute="top" secondItem="wR2-Bk-ymh" secondAttribute="bottom" constant="25" id="56r-jg-mZh"/>
                             <constraint firstItem="4Ey-0Q-73P" firstAttribute="centerX" secondItem="JSF-w2-k8n" secondAttribute="centerX" id="5Zv-lD-JUj"/>
@@ -134,6 +135,9 @@
                                 <color key="textColor" red="0.71764705882352942" green="0.70980392156862748" blue="0.72156862745098038" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="5ms-3n-DwW" id="rb1-Z3-e65"/>
+                                </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0aP-HR-asx">
                                 <rect key="frame" x="51" y="284" width="273" height="44"/>
